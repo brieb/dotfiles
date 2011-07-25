@@ -34,6 +34,3 @@
 [submodule "vim/bundle/tir_black"]
 	path = vim/bundle/tir_black
 	url = git@github.com:vim-scripts/tir_black.git
-[submodule "vim/bundle/vundle"]
-	path = vim/bundle/vundle
-	url = git://github.com/gmarik/vundle.git
