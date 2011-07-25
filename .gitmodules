@@ -37,3 +37,6 @@
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
 	url = git@github.com:brieb/vundle.git
+[submodule "/Users/bbunge/.vim/bundle/project.tar.gz"]
+	path = /Users/bbunge/.vim/bundle/project.tar.gz
+	url = https://github.com/vim-scripts/project.tar.gz

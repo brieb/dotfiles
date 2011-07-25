@@ -24,7 +24,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'wincent/Command-T'
 "Bundle 'Shougo/unite.vim'
 "Bundle 'nathanaelkane/vim-indent-guides'
-"Bundle 'vim-scripts/project.tar.gz'
+Bundle 'vim-scripts/project.tar.gz'
 Bundle 'xolox/vim-session'
 "Bundle 'cschlueter/vim-ir_black'
 "Bundle 'ervandew/supertab'
