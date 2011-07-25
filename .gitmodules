@@ -21,7 +21,7 @@
 	url = git@github.com:Raimondi/delimitMate.git
 [submodule "vim/bundle/taglist-plus"]
 	path = vim/bundle/taglist-plus
-	url = git@github.com:vim-scripts/taglist-plus.git
+	url = git://github.com/vim-scripts/taglist-plus.git
 [submodule "vim/bundle/LustyJuggler"]
 	path = vim/bundle/LustyJuggler
 	url = git@github.com:vim-scripts/LustyJuggler.git
