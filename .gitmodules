@@ -4,3 +4,33 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/snipmate.vim"]
+	path = vim/bundle/snipmate.vim
+	url = git@github.com:brieb/snipmate.vim.git
+[submodule "vim/bundle/sparkup"]
+	path = vim/bundle/sparkup
+	url = git@github.com:rstacruz/sparkup.git
+[submodule "vim/bundle/vim-session"]
+	path = vim/bundle/vim-session
+	url = git@github.com:xolox/vim-session.git
+[submodule "vim/bundle/delimitMate"]
+	path = vim/bundle/delimitMate
+	url = git@github.com:Raimondi/delimitMate.git
+[submodule "vim/bundle/taglist-plus"]
+	path = vim/bundle/taglist-plus
+	url = git@github.com:vim-scripts/taglist-plus.git
+[submodule "vim/bundle/LustyJuggler"]
+	path = vim/bundle/LustyJuggler
+	url = git@github.com:vim-scripts/LustyJuggler.git
+[submodule "vim/bundle/LustyExplorer"]
+	path = vim/bundle/LustyExplorer
+	url = git@github.com:vim-scripts/LustyExplorer.git
+[submodule "vim/bundle/bufkill.vim"]
+	path = vim/bundle/bufkill.vim
+	url = git@github.com:vim-scripts/bufkill.vim.git
+[submodule "vim/bundle/tir_black"]
+	path = vim/bundle/tir_black
+	url = git@github.com:vim-scripts/tir_black.git
