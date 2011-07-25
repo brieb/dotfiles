@@ -1,3 +1,10 @@
+if filereadable("$ADMIN_SCRIPTS/master.vimrc")
+  source $ADMIN_SCRIPTS/master.vimrc
+endif
+if filereadable("/home/engshare/admin/scripts/vim/biggrep.vim")
+  source /home/engshare/admin/scripts/vim/biggrep.vim
+endif
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -36,8 +43,11 @@ Bundle 'Raimondi/delimitMate'
 "Bundle 'FuzzyFinder'
 Bundle 'taglist-plus'
 "Bundle 'ZoomWin'
-Bundle 'LustyJuggler'
-Bundle 'LustyExplorer'
+
+" requires sprecial ruby stuff
+"Bundle 'LustyJuggler'
+"Bundle 'LustyExplorer'
+
 "Bundle 'jellybeans.vim'
 Bundle 'bufkill.vim'
 Bundle 'tir_black'
@@ -131,8 +141,8 @@ set wrap        "dont wrap lines
 "set colorcolumn=+1 "mark the ideal max text width
 
 "undo settings
-set undodir=~/.vim/undofiles
-set undofile
+"set undodir=~/.vim/undofiles
+"set undofile
 
 "let g:fuf_modesDisable = []
 "let g:fuf_mrufile_maxItem = 400
@@ -232,3 +242,4 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 let g:session_directory='~/vim-sessions'
+
