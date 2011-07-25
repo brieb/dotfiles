@@ -230,3 +230,5 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 "let g:neocomplcache_enable_at_startup = 1
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
+let g:session_directory='~/vim-sessions'
