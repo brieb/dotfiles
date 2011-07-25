@@ -39,4 +39,4 @@
 	url = git@github.com:brieb/vundle.git
 [submodule "vim/bundle/project.tar.gz"]
 	path = vim/bundle/project.tar.gz
-	url = https://github.com/vim-scripts/project.tar.gz
+	url = git://github.com/vim-scripts/project.tar.gz.git 
