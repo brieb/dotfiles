@@ -5,6 +5,9 @@ if filereadable("/home/engshare/admin/scripts/vim/biggrep.vim")
   source /home/engshare/admin/scripts/vim/biggrep.vim
 endif
 
+set t_Co=256
+set term=xterm-256color
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -210,7 +213,6 @@ map <silent> v :vsplit<CR>
 " Maps Alt-[n,p] for moving next and previous window respectively
 map <silent> n <C-w><C-w>
 map <silent> p <C-w><S-w>
-
 map <silent> q :BD<CR>
 
 "let g:SuperTabDefaultCompletionType = "context"
@@ -225,7 +227,47 @@ let g:session_default_to_last=1
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
-let delimitMate_expand_cr=1
+"let g:delimitMate_expand_cr=1
+"inoremap ( ()<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {<CR>}<Esc>O
+"autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
+"inoremap ) <c-r>=ClosePair(')')<CR>
+"inoremap ] <c-r>=ClosePair(']')<CR>
+"inoremap } <c-r>=CloseBracket()<CR>
+"inoremap " <c-r>=QuoteDelim('"')<CR>
+"inoremap ' <c-r>=QuoteDelim("'")<CR>
+
+"function ClosePair(char)
+  "if getline('.')[col('.') - 1] == a:char
+    "return "\<Right>"
+  "else
+    "return a:char
+  "endif
+"endf
+
+"function CloseBracket()
+  "if match(getline(line('.') + 1), '\s*}') < 0
+    "return "\<CR>}"
+  "else
+    "return "\<Esc>j0f}a"
+  "endif
+"endf
+
+"function QuoteDelim(char)
+  "let line = getline('.')
+  "let col = col('.')
+  "if line[col - 2] == "\\"
+    ""Inserting a quoted quotation mark into the string
+    "return a:char
+  "elseif line[col - 1] == a:char
+    ""Escaping out of the string
+    "return "\<Right>"
+  "else
+    ""Starting a string
+    "return a:char.a:char."\<Esc>i"
+  "endif
+"endf
 
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
