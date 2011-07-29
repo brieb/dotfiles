@@ -109,10 +109,14 @@ set incsearch
 set ignorecase
 set smartcase
 
+"syntax enable
 set background=dark
 "colorscheme jellybeans
-colorscheme tir_black 
+"colorscheme tir_black 
 "colorscheme dante
+"colorscheme solarized
+"let g:solarized_termtrans=1
+"let g:solarized_termcolors=256
 
 " Tab completion
 set wildmode=list:longest,list:full
@@ -227,7 +231,7 @@ let g:session_default_to_last=1
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
-"let g:delimitMate_expand_cr=1
+let delimitMate_expand_cr=1
 "inoremap ( ()<Esc>i
 "inoremap [ []<Esc>i
 "inoremap { {<CR>}<Esc>O
@@ -285,3 +289,6 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 let g:session_directory='~/vim-sessions'
 
+inoremap <C-j> <Esc>A;<Esc>o
+
+set tags=tags;/
