@@ -21,7 +21,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'scrooloose/syntastic'
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 Bundle 'msanders/snipmate.vim'
@@ -37,6 +37,7 @@ Bundle 'xolox/vim-session'
 "Bundle 'ervandew/supertab'
 Bundle 'Raimondi/delimitMate'
 "Bundle 'Shougo/neocomplcache'
+Bundle 'shawncplus/phpcomplete.vim'
 
 "vim-scripts repos
 "Bundle 'L9'
@@ -106,10 +107,12 @@ set incsearch
 set ignorecase
 set smartcase
 
+syntax on
 set background=dark
 "colorscheme jellybeans
-colorscheme tir_black 
+"colorscheme tir_black 
 "colorscheme dante
+colorscheme solarized 
 
 " Tab completion
 set wildmode=list:longest,list:full
@@ -243,3 +246,13 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 let g:session_directory='~/vim-sessions'
 
+nmap <silent> <F4>
+      \ :!ctags -f ./tags
+      \ --langmap="php:+.inc"
+      \ -h ".php.inc" -R --totals=yes
+      \ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
+set tags=./tags,tags
+
+command W w
+
+set mouse=a
