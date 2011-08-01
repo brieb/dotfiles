@@ -24,7 +24,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'scrooloose/syntastic'
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 "Bundle 'altercation/vim-colors-solarized'
@@ -41,12 +41,16 @@ Bundle 'xolox/vim-session'
 "Bundle 'ervandew/supertab'
 Bundle 'Raimondi/delimitMate'
 "Bundle 'Shougo/neocomplcache'
+Bundle 'shawncplus/phpcomplete.vim'
+"Bundle 'fholgado/minibufexpl.vim'
 
 "vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
 Bundle 'taglist-plus'
 "Bundle 'ZoomWin'
+Bundle 'bufexplorer.zip'
+Bundle 'YankRing.vim'
 
 " requires sprecial ruby stuff
 "Bundle 'LustyJuggler'
@@ -78,7 +82,6 @@ filetype plugin indent on     " required!
 " or wiki for FAQ
 " Note: comments after Bundle command are not allowed..
 
-syntax on
 set number
 set hidden
 
@@ -90,10 +93,10 @@ set softtabstop=2
 set expandtab
 
 let mapleader="f"
-nnoremap <C-f> a
-vnoremap <C-f> <Esc>gV
-onoremap <C-f> <Esc>
-inoremap <C-f> <Esc>
+nnoremap <C-@> a
+vnoremap <C-@> <Esc>gV
+onoremap <C-@> <Esc>
+inoremap <C-@> <Esc>
 "au VimEnter * map  <C-l> <Esc>
 "au VimEnter * imap <C-l> <Esc>
 "au VimEnter * vmap <C-l> <Esc>
@@ -114,10 +117,8 @@ syntax enable
 set background=dark
 "colorscheme jellybeans
 "colorscheme tir_black 
-colorscheme dante
-"colorscheme solarized
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
+"colorscheme dante
+colorscheme solarized 
 
 " Tab completion
 set wildmode=list:longest,list:full
@@ -293,3 +294,122 @@ let g:session_directory='~/vim-sessions'
 inoremap <C-j> <Esc>A;<Esc>o
 
 set tags=tags;/
+nmap <silent> <F4>
+      \ :!ctags -f ./tags
+      \ --langmap="php:+.inc"
+      \ -h ".php.inc" -R --totals=yes
+      \ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
+set tags=./tags,tags
+
+"command W w
+
+set mouse=a
+
+""""""""""""""""""""
+" => Statusline
+""""""""""""""""""""
+"Always show the statusline
+set laststatus=2
+"Format the statusline
+set statusline=%n\ %r%m\ %f%=%w%y%{fugitive#statusline()}[%l/%L:%c]%{strftime(\"%l:%M%P\ %D\")}
+
+""""""""""""""""""""
+" => Spell Checking
+""""""""""""""""""""
+"Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+"Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
+
+"Persistent undo
+try
+  set undodir=~/.vim_runtime/undodir
+  set undofile
+catch
+endtry
+
+"highlight clear
+map <silent> <leader>hc :noh<cr>
+
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+nnoremap <silent> <leader>y :YRShow<CR>
+
+let php_sql_query=1
+
+map <leader>ma :set mouse=a<CR>
+map <leader>mo :set mouse=<CR>
+
+set colorcolumn=81
+
+map <leader>tn :tabnext<CR>
+map <leader>tN :tabNext<CR>
+map <leader>to :tabnew<CR>
+map <leader>tq :tabclose<CR>
+map <leader>tm :tabmove 
+
+set tabpagemax=15
+"hi TabLineSel term=bold cterm=bold ctermfg=16 ctermbg=229
+"hi TabWinNumSel term=bold cterm=bold ctermfg=90 ctermbg=229
+"hi TabNumSel term=bold cterm=bold ctermfg=16 ctermbg=229
+
+"hi TabLine term=underline ctermfg=16 ctermbg=145
+"hi TabWinNum term=bold cterm=bold ctermfg=90 ctermbg=145
+"hi TabNum term=bold cterm=bold ctermfg=16 ctermbg=145
+
+"Rename tabs to show tab# and # of viewports
+if exists("+showtabline")
+  function! MyTabLine()
+    let s = ''
+    let wn = ''
+    let t = tabpagenr()
+    let i = 1
+    while i <= tabpagenr('$')
+      let buflist = tabpagebuflist(i)
+      let winnr = tabpagewinnr(i)
+      let s .= '%' . i . 'T'
+      let s .= (i == t ? '%1*' : '%2*')
+      let s .= ' '
+      let wn = tabpagewinnr(i,'$')
+
+      let s .= (i== t ? '%#TabNumSel#' : '%#TabNum#')
+      let s .= i
+      if tabpagewinnr(i,'$') > 1
+        let s .= '.'
+        let s .= (i== t ? '%#TabWinNumSel#' : '%#TabWinNum#')
+        let s .= (tabpagewinnr(i,'$') > 1 ? wn : '')
+      end
+
+      let s .= ' %*'
+      let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
+      let bufnr = buflist[winnr - 1]
+      let file = bufname(bufnr)
+      let buftype = getbufvar(bufnr, 'buftype')
+      if buftype == 'nofile'
+        if file =~ '\/.'
+          let file = substitute(file, '.*\/\ze.', '', '')
+        endif
+      else
+        let file = fnamemodify(file, ':p:t')
+      endif
+      if file == ''
+        let file = '[No Name]'
+      endif
+      let s .= file
+      let s .= (i == t ? '%m' : '')
+      let i = i + 1
+    endwhile
+    let s .= '%T%#TabLineFill#%='
+    return s
+  endfunction
+  set stal=2
+  set tabline=%!MyTabLine()
+endif
