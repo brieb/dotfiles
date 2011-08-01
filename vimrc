@@ -24,7 +24,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'scrooloose/syntastic'
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 "Bundle 'altercation/vim-colors-solarized'
@@ -41,12 +41,16 @@ Bundle 'xolox/vim-session'
 "Bundle 'ervandew/supertab'
 Bundle 'Raimondi/delimitMate'
 "Bundle 'Shougo/neocomplcache'
+Bundle 'shawncplus/phpcomplete.vim'
+"Bundle 'fholgado/minibufexpl.vim'
 
 "vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
 Bundle 'taglist-plus'
 "Bundle 'ZoomWin'
+Bundle 'bufexplorer.zip'
+Bundle 'YankRing.vim'
 
 " requires sprecial ruby stuff
 "Bundle 'LustyJuggler'
@@ -114,10 +118,8 @@ syntax enable
 set background=dark
 "colorscheme jellybeans
 "colorscheme tir_black 
-colorscheme dante
-"colorscheme solarized
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
+"colorscheme dante
+colorscheme solarized 
 
 " Tab completion
 set wildmode=list:longest,list:full
@@ -293,3 +295,53 @@ let g:session_directory='~/vim-sessions'
 inoremap <C-j> <Esc>A;<Esc>o
 
 set tags=tags;/
+nmap <silent> <F4>
+      \ :!ctags -f ./tags
+      \ --langmap="php:+.inc"
+      \ -h ".php.inc" -R --totals=yes
+      \ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
+set tags=./tags,tags
+
+command W w
+
+set mouse=a
+
+""""""""""""""""""""
+" => Statusline
+""""""""""""""""""""
+"Always show the statusline
+set laststatus=2
+"Format the statusline
+set statusline=%n\ %r%m\ %f%=%w%y%{fugitive#statusline()}[%l/%L:%c]"
+
+""""""""""""""""""""
+" => Spell Checking
+""""""""""""""""""""
+"Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+"Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
+
+"Persistent undo
+try
+  set undodir=~/.vim_runtime/undodir
+  set undofile
+catch
+endtry
+
+"highlight clear
+map <silent> <leader>hc :noh<cr>
+
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+nnoremap <silent> <leader>y :YRShow<CR>
+
+let php_sql_query=1
