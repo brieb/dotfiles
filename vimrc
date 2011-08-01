@@ -6,7 +6,7 @@ if filereadable("/home/engshare/admin/scripts/vim/biggrep.vim")
 endif
 
 set t_Co=256
-set term=xterm-256color
+"set term=xterm-256color
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -27,6 +27,7 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
+"Bundle 'altercation/vim-colors-solarized'
 Bundle 'msanders/snipmate.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'tsaleh/vim-align'
@@ -109,11 +110,11 @@ set incsearch
 set ignorecase
 set smartcase
 
-"syntax enable
+syntax enable
 set background=dark
 "colorscheme jellybeans
 "colorscheme tir_black 
-"colorscheme dante
+colorscheme dante
 "colorscheme solarized
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256

@@ -40,3 +40,6 @@
 [submodule "vim/bundle/project.tar.gz"]
 	path = vim/bundle/project.tar.gz
 	url = git://github.com/vim-scripts/project.tar.gz.git 
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
