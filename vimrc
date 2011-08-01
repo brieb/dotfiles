@@ -24,7 +24,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'scrooloose/syntastic'
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 "Bundle 'altercation/vim-colors-solarized'
@@ -41,12 +41,17 @@ Bundle 'xolox/vim-session'
 "Bundle 'ervandew/supertab'
 Bundle 'Raimondi/delimitMate'
 "Bundle 'Shougo/neocomplcache'
+Bundle 'shawncplus/phpcomplete.vim'
+"Bundle 'fholgado/minibufexpl.vim'
+Bundle "sjl/gundo.vim"
 
 "vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
 Bundle 'taglist-plus'
 "Bundle 'ZoomWin'
+Bundle 'bufexplorer.zip'
+Bundle 'YankRing.vim'
 
 " requires sprecial ruby stuff
 "Bundle 'LustyJuggler'
@@ -90,10 +95,10 @@ set softtabstop=2
 set expandtab
 
 let mapleader="f"
-nnoremap <C-f> a
-vnoremap <C-f> <Esc>gV
-onoremap <C-f> <Esc>
-inoremap <C-f> <Esc>
+nnoremap <C-@> a
+vnoremap <C-@> <Esc>gV
+onoremap <C-@> <Esc>
+inoremap <C-@> <Esc>
 "au VimEnter * map  <C-l> <Esc>
 "au VimEnter * imap <C-l> <Esc>
 "au VimEnter * vmap <C-l> <Esc>
@@ -114,10 +119,8 @@ syntax enable
 set background=dark
 "colorscheme jellybeans
 "colorscheme tir_black 
-colorscheme dante
-"colorscheme solarized
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
+"colorscheme dante
+colorscheme solarized 
 
 " Tab completion
 set wildmode=list:longest,list:full
@@ -146,11 +149,7 @@ set showmode
 "set list
 
 set wrap        "dont wrap lines
-"set colorcolumn=+1 "mark the ideal max text width
-
-"undo settings
-"set undodir=~/.vim/undofiles
-"set undofile
+set colorcolumn=+1 "mark the ideal max text width
 
 "let g:fuf_modesDisable = []
 "let g:fuf_mrufile_maxItem = 400
@@ -195,10 +194,10 @@ set wrap        "dont wrap lines
 "nnoremap <silent> fe     :FufEditDataFile<CR>
 "nnoremap <silent> fr     :FufRenewCache<CR>
 
-nnoremap <C-a> 0
-nnoremap <C-e> $
-inoremap <C-a> <Esc>0I
-inoremap <C-e> <Esc>$A
+"nnoremap <C-a> 0
+"nnoremap <C-e> $
+"inoremap <C-a> <Esc>0I
+"inoremap <C-e> <Esc>$A
 
 "nmap <silent> <Leader>T :CommandT<CR>
 "nmap <silent> <Leader>B :CommandTBuffer<CR>
@@ -207,18 +206,18 @@ nmap <silent> <Leader>t :TlistToggle<CR>
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Maps Alt-[h,j,k,l] to resizing a window split
-map <silent> h <C-w><
-map <silent> j <C-W>-
-map <silent> k <C-W>+
-map <silent> l <C-w>>
-" Maps Alt-[s.v] to horizontal and vertical split respectively
-map <silent> s :split<CR>
-map <silent> v :vsplit<CR>
-" Maps Alt-[n,p] for moving next and previous window respectively
-map <silent> n <C-w><C-w>
-map <silent> p <C-w><S-w>
-map <silent> q :BD<CR>
+"" Maps Alt-[h,j,k,l] to resizing a window split
+"map <silent> h <C-w><
+"map <silent> j <C-W>-
+"map <silent> k <C-W>+
+"map <silent> l <C-w>>
+""Maps Alt-[s.v] to horizontal and vertical split respectively
+"map <silent> s :split<CR>
+"map <silent> v :vsplit<CR>
+""Maps Alt-[n,p] for moving next and previous window respectively
+"map <silent> n <C-w><C-w>
+"map <silent> p <C-w><S-w>
+"map <silent> q :BD<CR>
 
 "let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
@@ -233,46 +232,6 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
 let delimitMate_expand_cr=1
-"inoremap ( ()<Esc>i
-"inoremap [ []<Esc>i
-"inoremap { {<CR>}<Esc>O
-"autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
-"inoremap ) <c-r>=ClosePair(')')<CR>
-"inoremap ] <c-r>=ClosePair(']')<CR>
-"inoremap } <c-r>=CloseBracket()<CR>
-"inoremap " <c-r>=QuoteDelim('"')<CR>
-"inoremap ' <c-r>=QuoteDelim("'")<CR>
-
-"function ClosePair(char)
-  "if getline('.')[col('.') - 1] == a:char
-    "return "\<Right>"
-  "else
-    "return a:char
-  "endif
-"endf
-
-"function CloseBracket()
-  "if match(getline(line('.') + 1), '\s*}') < 0
-    "return "\<CR>}"
-  "else
-    "return "\<Esc>j0f}a"
-  "endif
-"endf
-
-"function QuoteDelim(char)
-  "let line = getline('.')
-  "let col = col('.')
-  "if line[col - 2] == "\\"
-    ""Inserting a quoted quotation mark into the string
-    "return a:char
-  "elseif line[col - 1] == a:char
-    ""Escaping out of the string
-    "return "\<Right>"
-  "else
-    ""Starting a string
-    "return a:char.a:char."\<Esc>i"
-  "endif
-"endf
 
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
@@ -293,3 +252,66 @@ let g:session_directory='~/vim-sessions'
 inoremap <C-j> <Esc>A;<Esc>o
 
 set tags=tags;/
+nmap <silent> <F4>
+      \ :!ctags -f ./tags
+      \ --langmap="php:+.inc"
+      \ -h ".php.inc" -R --totals=yes
+      \ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
+set tags=./tags,tags
+
+set mouse=a
+
+""""""""""""""""""""
+" => Statusline
+""""""""""""""""""""
+"Always show the statusline
+set laststatus=2
+"Format the statusline
+set statusline=%n\ %r%m\ %f%=%w%y%{fugitive#statusline()}[%l/%L:%c]"
+
+""""""""""""""""""""
+" => Spell Checking
+""""""""""""""""""""
+"Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+"Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
+
+"Persistent undo
+try
+  set undodir=~/.vim_runtime/undodir
+  set undofile
+catch
+endtry
+
+"highlight clear
+map <silent> <leader>hc :noh<cr>
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+nnoremap <silent> <leader>y :YRShow<CR>
+
+let php_sql_query=1
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+nmap <leader>v :tabedit $MYVIMRC<CR>
+
+nnoremap <leader>u :GundoToggle<CR>
+
+
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
