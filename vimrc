@@ -43,6 +43,7 @@ Bundle 'Raimondi/delimitMate'
 "Bundle 'Shougo/neocomplcache'
 Bundle 'shawncplus/phpcomplete.vim'
 "Bundle 'fholgado/minibufexpl.vim'
+Bundle "sjl/gundo.vim"
 
 "vim-scripts repos
 "Bundle 'L9'
@@ -147,11 +148,7 @@ set showmode
 "set list
 
 set wrap        "dont wrap lines
-"set colorcolumn=+1 "mark the ideal max text width
-
-"undo settings
-"set undodir=~/.vim/undofiles
-"set undofile
+set colorcolumn=+1 "mark the ideal max text width
 
 "let g:fuf_modesDisable = []
 "let g:fuf_mrufile_maxItem = 400
@@ -196,10 +193,10 @@ set wrap        "dont wrap lines
 "nnoremap <silent> fe     :FufEditDataFile<CR>
 "nnoremap <silent> fr     :FufRenewCache<CR>
 
-nnoremap <C-a> 0
-nnoremap <C-e> $
-inoremap <C-a> <Esc>0I
-inoremap <C-e> <Esc>$A
+"nnoremap <C-a> 0
+"nnoremap <C-e> $
+"inoremap <C-a> <Esc>0I
+"inoremap <C-e> <Esc>$A
 
 "nmap <silent> <Leader>T :CommandT<CR>
 "nmap <silent> <Leader>B :CommandTBuffer<CR>
@@ -208,18 +205,18 @@ nmap <silent> <Leader>t :TlistToggle<CR>
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Maps Alt-[h,j,k,l] to resizing a window split
-map <silent> h <C-w><
-map <silent> j <C-W>-
-map <silent> k <C-W>+
-map <silent> l <C-w>>
-" Maps Alt-[s.v] to horizontal and vertical split respectively
-map <silent> s :split<CR>
-map <silent> v :vsplit<CR>
-" Maps Alt-[n,p] for moving next and previous window respectively
-map <silent> n <C-w><C-w>
-map <silent> p <C-w><S-w>
-map <silent> q :BD<CR>
+"" Maps Alt-[h,j,k,l] to resizing a window split
+"map <silent> h <C-w><
+"map <silent> j <C-W>-
+"map <silent> k <C-W>+
+"map <silent> l <C-w>>
+""Maps Alt-[s.v] to horizontal and vertical split respectively
+"map <silent> s :split<CR>
+"map <silent> v :vsplit<CR>
+""Maps Alt-[n,p] for moving next and previous window respectively
+"map <silent> n <C-w><C-w>
+"map <silent> p <C-w><S-w>
+"map <silent> q :BD<CR>
 
 "let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
@@ -234,46 +231,6 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
 let delimitMate_expand_cr=1
-"inoremap ( ()<Esc>i
-"inoremap [ []<Esc>i
-"inoremap { {<CR>}<Esc>O
-"autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
-"inoremap ) <c-r>=ClosePair(')')<CR>
-"inoremap ] <c-r>=ClosePair(']')<CR>
-"inoremap } <c-r>=CloseBracket()<CR>
-"inoremap " <c-r>=QuoteDelim('"')<CR>
-"inoremap ' <c-r>=QuoteDelim("'")<CR>
-
-"function ClosePair(char)
-  "if getline('.')[col('.') - 1] == a:char
-    "return "\<Right>"
-  "else
-    "return a:char
-  "endif
-"endf
-
-"function CloseBracket()
-  "if match(getline(line('.') + 1), '\s*}') < 0
-    "return "\<CR>}"
-  "else
-    "return "\<Esc>j0f}a"
-  "endif
-"endf
-
-"function QuoteDelim(char)
-  "let line = getline('.')
-  "let col = col('.')
-  "if line[col - 2] == "\\"
-    ""Inserting a quoted quotation mark into the string
-    "return a:char
-  "elseif line[col - 1] == a:char
-    ""Escaping out of the string
-    "return "\<Right>"
-  "else
-    ""Starting a string
-    "return a:char.a:char."\<Esc>i"
-  "endif
-"endf
 
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
@@ -300,8 +257,6 @@ nmap <silent> <F4>
       \ -h ".php.inc" -R --totals=yes
       \ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
 set tags=./tags,tags
-
-"command W w
 
 set mouse=a
 
@@ -335,7 +290,7 @@ endtry
 "highlight clear
 map <silent> <leader>hc :noh<cr>
 
-" Smart way to move btw. windows
+" Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -347,8 +302,6 @@ let php_sql_query=1
 
 map <leader>ma :set mouse=a<CR>
 map <leader>mo :set mouse=<CR>
-
-set colorcolumn=81
 
 map <leader>tn :tabnext<CR>
 map <leader>tN :tabNext<CR>
@@ -413,3 +366,18 @@ if exists("+showtabline")
   set stal=2
   set tabline=%!MyTabLine()
 endif
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+nmap <leader>v :tabedit $MYVIMRC<CR>
+
+nnoremap <leader>u :GundoToggle<CR>
+
+
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
