@@ -1,3 +1,5 @@
+source $HOME/vim-brie/bundles.vim
+
 if filereadable("$ADMIN_SCRIPTS/master.vimrc")
   source $ADMIN_SCRIPTS/master.vimrc
 endif
@@ -6,86 +8,11 @@ if filereadable("/home/engshare/admin/scripts/vim/biggrep.vim")
 endif
 
 set t_Co=256
-"set term=xterm-256color
-
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-"Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-surround'
-"Bundle 'altercation/vim-colors-solarized'
-Bundle 'msanders/snipmate.vim'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tsaleh/vim-align'
-"Bundle 'majutsushi/tagbar'
-"Bundle 'wincent/Command-T'
-"Bundle 'Shougo/unite.vim'
-"Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'vim-scripts/project.tar.gz'
-Bundle 'xolox/vim-session'
-"Bundle 'cschlueter/vim-ir_black'
-"Bundle 'ervandew/supertab'
-Bundle 'Raimondi/delimitMate'
-"Bundle 'Shougo/neocomplcache'
-Bundle 'shawncplus/phpcomplete.vim'
-"Bundle 'fholgado/minibufexpl.vim'
-Bundle "sjl/gundo.vim"
-
-"vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-Bundle 'taglist-plus'
-"Bundle 'ZoomWin'
-Bundle 'bufexplorer.zip'
-Bundle 'YankRing.vim'
-
-" requires sprecial ruby stuff
-"Bundle 'LustyJuggler'
-"Bundle 'LustyExplorer'
-
-"Bundle 'jellybeans.vim'
-Bundle 'bufkill.vim'
-Bundle 'tir_black'
-"Bundle 'AutoClose'
-"Bundle 'marklar.vim'
-
-"non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-
-filetype plugin indent on     " required! 
-"
-" Brief help
-"
-" :BundleInstall  - install bundles (won't update installed)
-" :BundleInstall! - update if installed
-"
-" :Bundles foo    - search for foo
-" :Bundles! foo   - refresh cached list and search for foo
-"
-" :BundleClean    - confirm removal of unused bundles
-" :BundleClean!   - remove without confirmation
-"
-" see :h vundle for more details
-" or wiki for FAQ
-" Note: comments after Bundle command are not allowed..
 
 syntax on
 set number
 set hidden
+set ruler
 
 " Whitespace stuff
 set nowrap
@@ -93,21 +20,17 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set autoindent
+set smartindent
+filetype plugin indent on
+" make uses real tabs
+au FileType make set noexpandtab
 
-let mapleader="f"
+let mapleader=" "
 nnoremap <C-@> a
 vnoremap <C-@> <Esc>gV
 onoremap <C-@> <Esc>
 inoremap <C-@> <Esc>
-"au VimEnter * map  <C-l> <Esc>
-"au VimEnter * imap <C-l> <Esc>
-"au VimEnter * vmap <C-l> <Esc>
-
-set autoindent
-set smartindent
-filetype plugin indent on
-
-set ruler
 
 " Searching
 set hlsearch
@@ -119,7 +42,6 @@ syntax enable
 set background=dark
 "colorscheme jellybeans
 "colorscheme tir_black 
-"colorscheme dante
 colorscheme solarized 
 
 " Tab completion
@@ -128,13 +50,11 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>N :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 "let NERDTreeChDirMode=2
-
-" make uses real tabs
-au FileType make set noexpandtab
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
@@ -150,54 +70,6 @@ set showmode
 
 set wrap        "dont wrap lines
 set colorcolumn=+1 "mark the ideal max text width
-
-"let g:fuf_modesDisable = []
-"let g:fuf_mrufile_maxItem = 400
-"let g:fuf_mrucmd_maxItem = 400
-"nnoremap <silent> fb     :FufBuffer<CR>
-"nnoremap <silent> ffb    :FufFileWithCurrentBufferDir<CR>
-"nnoremap <silent> ffc    :FufFileWithFullCwd<CR>
-""nnoremap <silent> ff     :FufFile<CR>
-""nnoremap <silent> fl     :FufCoverageFileChange<CR>
-""nnoremap <silent> fL     :FufCoverageFileChange<CR>
-""nnoremap <silent> f<C-l> :FufCoverageFileRegister<CR>
-"nnoremap <silent> fdb     :FufDirWithCurrentBufferDir<CR>
-"nnoremap <silent> fdc     :FufDirWithFullCwd<CR>
-"nnoremap <silent> f/ :FufDir<CR>
-""nnoremap <silent> fn     :FufMruFile<CR>
-""nnoremap <silent> fN     :FufMruFileInCwd<CR>
-""nnoremap <silent> fm     :FufMruCmd<CR>
-"nnoremap <silent> fbf     :FufBookmarkFile<CR>nnoremap <silent> s<C-u> :FufBookmarkFileAdd<CR>
-"vnoremap <silent> fbs    :FufBookmarkFileAddAsSelectedText<CR>
-"nnoremap <silent> fbd     :FufBookmarkDir<CR>
-"nnoremap <silent> f<C-i> :FufBookmarkDirAdd<CR>
-"nnoremap <silent> ft     :FufTag<CR>
-""nnoremap <silent> fT     :FufTag!<CR>
-"nnoremap <silent> f<C-]> :FufTagWithCursorWord!<CR>
-"nnoremap <silent> f,     :FufBufferTag<CR>
-"nnoremap <silent> f<     :FufBufferTag!<CR>
-"vnoremap <silent> f,     :FufBufferTagWithSelectedText!<CR>
-"vnoremap <silent> f<     :FufBufferTagWithSelectedText<CR>
-"nnoremap <silent> f}     :FufBufferTagWithCursorWord!<CR>
-"nnoremap <silent> f.     :FufBufferTagAll<CR>
-"nnoremap <silent> f>     :FufBufferTagAll!<CR>
-"vnoremap <silent> f.     :FufBufferTagAllWithSelectedText!<CR>
-"vnoremap <silent> f>     :FufBufferTagAllWithSelectedText<CR>
-"nnoremap <silent> f]     :FufBufferTagAllWithCursorWord!<CR>
-"nnoremap <silent> fg     :FufTaggedFile<CR>
-"nnoremap <silent> fG     :FufTaggedFile!<CR>
-"nnoremap <silent> fo     :FufJumpList<CR>
-"nnoremap <silent> fp     :FufChangeList<CR>
-"nnoremap <silent> fq     :FufQuickfix<CR>
-"nnoremap <silent> fl     :FufLine<CR>
-"nnoremap <silent> fh     :FufHelp<CR>
-"nnoremap <silent> fe     :FufEditDataFile<CR>
-"nnoremap <silent> fr     :FufRenewCache<CR>
-
-"nnoremap <C-a> 0
-"nnoremap <C-e> $
-"inoremap <C-a> <Esc>0I
-"inoremap <C-e> <Esc>$A
 
 "nmap <silent> <Leader>T :CommandT<CR>
 "nmap <silent> <Leader>B :CommandTBuffer<CR>
@@ -291,27 +163,41 @@ endtry
 "highlight clear
 map <silent> <leader>hc :noh<cr>
 
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
 nnoremap <silent> <leader>y :YRShow<CR>
 
 let php_sql_query=1
 
-" Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
-nmap <leader>v :tabedit $MYVIMRC<CR>
-
 nnoremap <leader>u :GundoToggle<CR>
-
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
+
+"set formatprg=par\ -w78
+
+" Make Y behave consistently with D and C
+noremap Y y$
+
+" Re-select visual area after indenting
+vnoremap > >gv
+vnoremap < <gv
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+"-- FuzzyFinder -----------------------------------------------------------
+nnoremap <silent> <leader>fb :FufBuffer<CR>
+nnoremap <silent> <leader>fd :FufDir<CR>
+nnoremap <silent> <leader>ff :FufFile<CR>
+nnoremap <silent> <leader>fh :FufHelp<CR>
+nnoremap <silent> <leader>ft :FufTag<CR>
+
+"-- Fugitive (Git) --------------------------------------------------------
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gs :Gstatus<CR>)
