@@ -76,3 +76,8 @@ filetype plugin indent on     " required!
 "Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'vim-scripts/L9'
+Bundle 'godlygeek/tabular'
+"Bundle 'vim-scripts/IndentAnything'
+Bundle 'pangloss/vim-javascript'
+Bundle 'joestelmach/javaScriptLint.vim'
+Bundle 'vim-scripts/jsbeautify'

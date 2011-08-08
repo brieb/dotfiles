@@ -267,3 +267,15 @@ nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>)
+
+nmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
+vmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
+
+map <leader>w :w<CR>
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+nnoremap <silent> <leader>jsb :call g:Jsbeautify()<cr>

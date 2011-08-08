@@ -70,3 +70,18 @@
 [submodule "vim/bundle/L9"]
 	path = vim/bundle/L9
 	url = git://github.com/vim-scripts/L9.git
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/IndentAnything"]
+	path = vim/bundle/IndentAnything
+	url = git://github.com/vim-scripts/IndentAnything.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = git://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/javaScriptLint.vim"]
+	path = vim/bundle/javaScriptLint.vim
+	url = git://github.com/joestelmach/javaScriptLint.vim.git
+[submodule "vim/bundle/jsbeautify"]
+	path = vim/bundle/jsbeautify
+	url = git://github.com/vim-scripts/jsbeautify.git
