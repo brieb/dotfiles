@@ -93,7 +93,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-let mapleader="f"
+let mapleader=","
 nnoremap <C-@> a
 vnoremap <C-@> <Esc>gV
 onoremap <C-@> <Esc>
@@ -366,6 +366,8 @@ if exists("+showtabline")
   set stal=2
   set tabline=%!MyTabLine()
 endif
+
+set showtabline=1
 
 " Source the vimrc file after saving it
 if has("autocmd")
