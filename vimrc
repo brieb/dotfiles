@@ -68,7 +68,7 @@ set showmode
 "set list
 
 set wrap        "dont wrap lines
-set colorcolumn=+1 "mark the ideal max text width
+set colorcolumn=81
 
 nmap <silent> <Leader>t :TlistToggle<CR>
 
@@ -280,3 +280,5 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 nnoremap <silent> <leader>jsb :call g:Jsbeautify()<cr>
+
+set tags=tags;/
