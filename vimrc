@@ -260,6 +260,7 @@ nnoremap <silent> <leader>fd :FufDir<CR>
 nnoremap <silent> <leader>ff :FufFile<CR>
 nnoremap <silent> <leader>fh :FufHelp<CR>
 nnoremap <silent> <leader>ft :FufTag<CR>
+let g:fuf_keyOpen = '<Tab>'
 
 "-- Fugitive (Git) --------------------------------------------------------
 nnoremap <silent> <leader>gb :Gblame<CR>
