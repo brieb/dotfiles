@@ -22,12 +22,6 @@
 [submodule "vim/bundle/taglist-plus"]
 	path = vim/bundle/taglist-plus
 	url = git://github.com/vim-scripts/taglist-plus.git
-[submodule "vim/bundle/LustyJuggler"]
-	path = vim/bundle/LustyJuggler
-	url = git@github.com:vim-scripts/LustyJuggler.git
-[submodule "vim/bundle/LustyExplorer"]
-	path = vim/bundle/LustyExplorer
-	url = git@github.com:vim-scripts/LustyExplorer.git
 [submodule "vim/bundle/bufkill.vim"]
 	path = vim/bundle/bufkill.vim
 	url = git@github.com:vim-scripts/bufkill.vim.git

@@ -1,4 +1,7 @@
-source $HOME/vim-brie/bundles.vim
+"source $HOME/vim-brie/bundles.vim
+call pathogen#infect()
+syntax on
+filetype plugin indent on
 
 if filereadable("$ADMIN_SCRIPTS/master.vimrc")
   source $ADMIN_SCRIPTS/master.vimrc
@@ -282,3 +285,5 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 nnoremap <silent> <leader>jsb :call g:Jsbeautify()<cr>
 
 set tags=tags;/
+
+nnoremap <leader>soa :s/->\([a-zA-Z_]*\)/\['\1'\]/<CR>
