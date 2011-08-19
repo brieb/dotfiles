@@ -1,0 +1,39 @@
+set -o vi
+
+# Open SOCKS proxy into KZSU on port localhost:10080 (see ~/.ssh/config)
+# Randomly picks from available SSH bastions.
+alias kzsu-ssh="BASTION=\$(grep -E '^Host kzsu-ssh[1-9]' ~/.ssh/config | cut -d' ' -f2 | perl -wl -e '@f=<>; print \$f[rand \$#f + 1]'); echo Tunneling into \$BASTION; ssh -fN \$BASTION"
+
+# Shuts down backgrounded ssh connections
+alias kzsu-shutdown="ps auxwww | grep ssh | grep kzsu | perl -na -e 'print \"Killing \$F[1]...\"; \`kill \$F[1]\`; print \"done.\n\"'"
+
+export PATH=/sw/bin:/usr/local/bin:~/bash-brie/bin:$PATH
+
+alias l="ls -al"
+
+alias go2mamp="cd /Applications/MAMP/htdocs"
+alias mmysql="/Applications/MAMP/Library/bin/mysql -uroot -proot"
+alias go2vim="cd ~/vim-brie"
+
+alias gsa="git submodule add"
+alias gsi="git submodule init"
+
+function vundle_add {
+  local git_repo=${1}
+  local bundle_name=$(echo ${git_repo} | sed 's/.*com\/\(.*\)\.git/\1/')
+  local bundle_dir="vim/bundle/"$(echo ${bundle_name} | sed 's/.*\///')
+
+  go2vim;
+  git submodule add ${git_repo} ${bundle_dir};
+  echo "Bundle '${bundle_name}'" >> bundles.vim;
+}
+
+
+test -r /sw/bin/init.sh && . /sw/bin/init.sh
+
+[[ -s /Users/bbunge/.tmuxinator/scripts/tmuxinator ]] && source /Users/bbunge/.tmuxinator/scripts/tmuxinator
+export EDITOR='vim'
+export SHELL='bash'
+alias mux='tmuxinator'
+
+source ~/Dropbox/dotfiles/bash_completion_tmux.sh

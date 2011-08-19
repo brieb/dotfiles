@@ -15,3 +15,7 @@ mkdir -p ~/.vim_runtime/undodir
 #tmux stuff
 ln -s $DIR/tmux/tmux.conf ~/.tmux.conf
 ln -s $DIR/tmux/tmuxinator ~/.tmuxinator
+
+DIR_BASH=$DIR/bash
+ln -s $DIR_BASH/bashrc ~/.bashrc
+ln -s $DIR_BASH/bash_profile ~/.bash_profile

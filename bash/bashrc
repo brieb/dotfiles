@@ -1,0 +1,6 @@
+source /Users/bbunge/.bash_profile
+export TERM=xterm-256color
+alias ot="vim ~/notes/Todo.txt"
+[[ -s /Users/bbunge/.tmuxinator/scripts/tmuxinator ]] && source /Users/bbunge/.tmuxinator/scripts/tmuxinator
+
+source ~/Dropbox/dotfiles/bash_completion_tmux.sh
