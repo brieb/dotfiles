@@ -31,9 +31,11 @@ function vundle_add {
 
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
-[[ -s /Users/bbunge/.tmuxinator/scripts/tmuxinator ]] && source /Users/bbunge/.tmuxinator/scripts/tmuxinator
+[[ -s ~/.tmuxinator/scripts/tmuxinator ]] && source ~/.tmuxinator/scripts/tmuxinator
 export EDITOR='vim'
 export SHELL='bash'
 alias mux='tmuxinator'
 
-source ~/Dropbox/dotfiles/bash_completion_tmux.sh
+source ~/dotfiles/tmux/bash_completion_tmux.sh
+export TERM=xterm-256color
+alias ot="vim ~/notes/Todo.txt"
