@@ -1,21 +1,25 @@
 #!/bin/bash
 
-DIR=~/dotfiles
+DIR=$HOME/dotfiles
 
+function gen_sym {
+  file=$DIR/$1/$2;
+  fileln=$(echo $file | sed 's/.*\/\(.*\)$/\.\1/g');
+  fileln=$HOME/$fileln;
+  rm $fileln;
+  ln -s $file $fileln;
+}
+function autogen_sym {
+  for file in $DIR/$1/* ; do
+    file=$(echo $file | sed 's/.*\/\(.*\)$/\1/g')
+    gen_sym $1 $file
+  done
+}
 
-# Vim stuff
-DIR_VIM=$DIR/vim
-ln -s $DIR_VIM/vimrc ~/.vimrc
-ln -s $DIR_VIM/gvimrc ~/.gvimrc
-ln -s $DIR_VIM/vim ~/.vim
-ln -s $DIR_VIM/vimperator ~/.vimperator
-
+autogen_sym vim 
 mkdir -p ~/.vim_runtime/undodir
 
-#tmux stuff
-ln -s $DIR/tmux/tmux.conf ~/.tmux.conf
-ln -s $DIR/tmux/tmuxinator ~/.tmuxinator
+gen_sym tmux tmux.conf
+gen_sym tmux tmuxinator
 
-DIR_BASH=$DIR/bash
-ln -s $DIR_BASH/bashrc ~/.bashrc
-ln -s $DIR_BASH/bash_profile ~/.bash_profile
+autogen_sym bash
