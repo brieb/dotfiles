@@ -28,9 +28,6 @@
 [submodule "vim/vim/bundle/tir_black"]
 	path = vim/vim/bundle/tir_black
 	url = git@github.com:vim-scripts/tir_black.git
-[submodule "vim/vim/bundle/vundle"]
-	path = vim/vim/bundle/vundle
-	url = git@github.com:brieb/vundle.git
 [submodule "vim/vim/bundle/project.tar.gz"]
 	path = vim/vim/bundle/project.tar.gz
 	url = git://github.com/vim-scripts/project.tar.gz.git 
@@ -76,9 +73,6 @@
 [submodule "vim/vim/bundle/javaScriptLint.vim"]
 	path = vim/vim/bundle/javaScriptLint.vim
 	url = git://github.com/joestelmach/javaScriptLint.vim.git
-[submodule "vim/vim/bundle/jsbeautify"]
-	path = vim/vim/bundle/jsbeautify
-	url = git://github.com/vim-scripts/jsbeautify.git
 [submodule "vim/vim/bundle/jslint.vim"]
 	path = vim/vim/bundle/jslint.vim
 	url = git://github.com/hallettj/jslint.vim.git
