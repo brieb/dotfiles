@@ -1,0 +1,19 @@
+# ~/.tmuxinator/dorm_website.yml
+# you can make as many tabs as you wish...
+
+project_name: Dorm Website
+project_root: /Applications/MAMP/htdocs/dorm_website
+#pre: sudo /etc/rc.d/mysqld start
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim .
+        - #empty, will just run plain bash
+  #- shell: git pull
+  #- database: rails db
+  #- server: rails s
+  #- logs: tail -f logs/development.log
+  #- console: rails c
+  #- capistrano:
+  #- server: ssh me@myhost

@@ -1,0 +1,2 @@
+alias start_dorm_website='$SHELL /Users/bbunge/.tmuxinator/dorm_website.tmux'
+alias iterm_dorm_website='cat /Users/bbunge/.tmuxinator/dorm_website.AppleScript | osascript'
