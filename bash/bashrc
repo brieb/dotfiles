@@ -14,17 +14,19 @@ alias l="ls -al"
 alias go2mamp="cd /Applications/MAMP/htdocs"
 alias mql="/Applications/MAMP/Library/bin/mysql -uroot -proot"
 alias go2vim="cd ~/dotfiles/vim/"
+alias go2df="cd ~/dotfiles"
 
 alias gsa="git submodule add"
 alias gsi="git submodule init"
+alias gsu="git submodule update"
 
 function vim_add {
   local git_repo=${1}
   local bundle_name=$(echo ${git_repo} | sed 's/.*com\/\(.*\)\.git/\1/')
-  local bundle_dir="vim/bundle/"$(echo ${bundle_name} | sed 's/.*\///')
+  local bundle_dir="vim/vim/bundle/"$(echo ${bundle_name} | sed 's/.*\///')
 
-  go2vim;
-  git submodule add ${git_repo} ${bundle_dir};
+  go2df;
+  git submodule add ${git_repo} ${bundle_dir} && git submodule init
 }
 
 
@@ -73,3 +75,18 @@ PS4='+ '
 }
 proml
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi

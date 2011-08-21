@@ -13,9 +13,6 @@
 [submodule "vim/vim/bundle/sparkup"]
 	path = vim/vim/bundle/sparkup
 	url = git@github.com:rstacruz/sparkup.git
-[submodule "vim/vim/bundle/vim-session"]
-	path = vim/vim/bundle/vim-session
-	url = git@github.com:xolox/vim-session.git
 [submodule "vim/vim/bundle/delimitMate"]
 	path = vim/vim/bundle/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
@@ -64,9 +61,33 @@
 [submodule "vim/vim/bundle/vim-javascript"]
 	path = vim/vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
-[submodule "vim/vim/bundle/javaScriptLint.vim"]
-	path = vim/vim/bundle/javaScriptLint.vim
-	url = git://github.com/joestelmach/javaScriptLint.vim.git
-[submodule "vim/vim/bundle/jslint.vim"]
-	path = vim/vim/bundle/jslint.vim
-	url = git://github.com/hallettj/jslint.vim.git
+[submodule "vim/vim/bundle/command-t"]
+	path = vim/vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "vim/vim/bundle/SuperTab"]
+	path = vim/vim/bundle/SuperTab
+	url = git://github.com/vim-scripts/SuperTab.git
+[submodule "vim/vim/bundle/tagbar"]
+	path = vim/vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/vim/bundle/vim-indent-guides"]
+	path = vim/vim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/vim/bundle/mru.vim"]
+	path = vim/vim/bundle/mru.vim
+	url = git://github.com/vim-scripts/mru.vim.git
+[submodule "vim/vim/bundle/vim-repeat"]
+	path = vim/vim/bundle/vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "vim/vim/bundle/vimbuddy.vim"]
+	path = vim/vim/bundle/vimbuddy.vim
+	url = git://github.com/vim-scripts/vimbuddy.vim.git
+[submodule "vim/vim/bundle/Better-CSS-Syntax-for-Vim"]
+	path = vim/vim/bundle/Better-CSS-Syntax-for-Vim
+	url = git://github.com/vim-scripts/Better-CSS-Syntax-for-Vim.git
+[submodule "vim/vim/bundle/css_color.vim"]
+	path = vim/vim/bundle/css_color.vim
+	url = git://github.com/vim-scripts/css_color.vim.git
+[submodule "vim/vim/bundle/vim-sparkup"]
+	path = vim/vim/bundle/vim-sparkup
+	url = git://github.com/bingaman/vim-sparkup.git

@@ -1,5 +1,5 @@
-"source $HOME/vim-brie/bundles.vim
 call pathogen#infect()
+call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
@@ -42,12 +42,13 @@ set smartcase
 
 syntax enable
 set background=dark
-"colorscheme jellybeans
+colorscheme jellybeans
 "colorscheme tir_black 
-colorscheme solarized 
+"colorscheme solarized 
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"colorscheme candycode
 
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
 
 
 
@@ -77,8 +78,9 @@ set showmode
 
 set wrap        "dont wrap lines
 set colorcolumn=81
+highlight ColorColumn ctermbg=8
+highlight ColorColumn guibg=Black
 
-nmap <silent> <Leader>t :TlistToggle<CR>
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -144,7 +146,7 @@ set mouse=a
 "Always show the statusline
 set laststatus=2
 "Format the statusline
-set statusline=%n\ %r%m\ %f%=%w%y%{fugitive#statusline()}[%l/%L:%c]%{strftime(\"%l:%M%P\ %D\")}
+set statusline=%n\ %r%m\ %f%=%w%y%{fugitive#statusline()}[%l/%L:%c]%{strftime(\"%l:%M%p\ %m/%d\")}\ %{VimBuddy()}
 
 """"""""""""""""""""
 " => Spell Checking
@@ -280,7 +282,7 @@ nnoremap <silent> <leader>gs :Gstatus<CR>)
 nmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
 vmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
 
-map <leader>w :w<CR>
+map <leader>w :wa<CR>
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -292,3 +294,46 @@ nnoremap <silent> <leader>jsb :call g:Jsbeautify()<cr>
 set tags=tags;/
 
 nnoremap <leader>soa :s/->\([a-zA-Z_]*\)/\['\1'\]/<CR>
+noremap <leader>of :CommandT<CR>
+noremap <leader>ob :CommandTBuffer<CR>
+
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+
+let g:SuperTabDefaultCompletionType = "context"
+
+let g:tagbar_usearrows = 1
+nnoremap <leader>t :TagbarToggle<CR>
+"nmap <silent> <Leader>t :TlistToggle<CR>
+
+nnoremap ; :
+
+" Enable automatic title setting for terminals
+set title
+set titleold="Terminal"
+set titlestring=%F\ -\ Vim
+
+"" Disable up/down arrow keys
+"noremap <up> <nop>
+"noremap <down> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"vnoremap <up> <nop>
+"vnoremap <down> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"
+"" Left/Right arrow keys change buffers in all modes
+"noremap <Left> <Esc>:bp<CR>
+"inoremap <Left> <Esc>:bp<CR>
+"nnoremap <Left> <Esc>:bp<CR>
+"vnoremap <Left> <Esc>:bp<CR>
+"
+"noremap <Right> <Esc>:bn<CR>
+"inoremap <Right> <Esc>:bn<CR>
+"nnoremap <Right> <Esc>:bn<CR>
+"vnoremap <Right> <Esc>:bn<CR>
+
+
+noremap <leader>bd <Esc>:BD<CR>
+vnoremap <leader>bd <Esc>:BD<CR>
