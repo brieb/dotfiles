@@ -43,9 +43,6 @@
 [submodule "vim/vim/bundle/gundo.vim"]
 	path = vim/vim/bundle/gundo.vim
 	url = git://github.com/sjl/gundo.vim.git
-[submodule "vim/vim/bundle/vim-unimpaired"]
-	path = vim/vim/bundle/vim-unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
 [submodule "vim/vim/bundle/FuzzyFinder"]
 	path = vim/vim/bundle/FuzzyFinder
 	url = git://github.com/vim-scripts/FuzzyFinder.git
@@ -79,9 +76,6 @@
 [submodule "vim/vim/bundle/vim-repeat"]
 	path = vim/vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
-[submodule "vim/vim/bundle/vimbuddy.vim"]
-	path = vim/vim/bundle/vimbuddy.vim
-	url = git://github.com/vim-scripts/vimbuddy.vim.git
 [submodule "vim/vim/bundle/Better-CSS-Syntax-for-Vim"]
 	path = vim/vim/bundle/Better-CSS-Syntax-for-Vim
 	url = git://github.com/vim-scripts/Better-CSS-Syntax-for-Vim.git
@@ -91,3 +85,9 @@
 [submodule "vim/vim/bundle/vim-sparkup"]
 	path = vim/vim/bundle/vim-sparkup
 	url = git://github.com/bingaman/vim-sparkup.git
+[submodule "vim/vim/bundle/vim-easymotion"]
+	path = vim/vim/bundle/vim-easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/vim/bundle/unimpaired.vim"]
+	path = vim/vim/bundle/unimpaired.vim
+	url = git://github.com/vim-scripts/unimpaired.vim.git

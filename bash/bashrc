@@ -91,6 +91,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 alias t='todo.sh'
+alias tv='vim $HOME/Dropbox/todo/todo.txt'
 
 function def {
   #curl "dict://dict.org/d:${1}:*";

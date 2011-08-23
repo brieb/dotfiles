@@ -12,6 +12,8 @@ endif
 
 set t_Co=256
 
+nmap Y y$
+
 set number
 set hidden
 set ruler
@@ -146,7 +148,7 @@ set mouse=a
 "Always show the statusline
 set laststatus=2
 "Format the statusline
-set statusline=%n\ %r%m\ %f%=%w%y%{fugitive#statusline()}[%l/%L:%c]%{strftime(\"%l:%M%p\ %m/%d\")}\ %{VimBuddy()}
+set statusline=%n\ %r%m\ %f%=%w%y%{fugitive#statusline()}[%l/%L:%c]%{strftime(\"%l:%M%p\ %m/%d\")}
 
 """"""""""""""""""""
 " => Spell Checking
@@ -265,12 +267,15 @@ set pastetoggle=<F2>
 set showmode
 
 "-- FuzzyFinder -----------------------------------------------------------
-nnoremap <silent> <leader>fb :FufBuffer<CR>
-nnoremap <silent> <leader>fd :FufDir<CR>
-nnoremap <silent> <leader>ff :FufFile<CR>
-nnoremap <silent> <leader>fh :FufHelp<CR>
-nnoremap <silent> <leader>ft :FufTag<CR>
+nnoremap <silent> ;;b :FufBuffer<CR>
+nnoremap <silent> ;;d :FufDir<CR>
+nnoremap <silent> ;;f :FufFile<CR>
+nnoremap <silent> ;;h :FufHelp<CR>
+nnoremap <silent> ;;t :FufTag<CR>
 let g:fuf_keyOpen = '<Tab>'
+
+noremap ;f :CommandT<CR>
+noremap ;b :CommandTBuffer<CR>
 
 "-- Fugitive (Git) --------------------------------------------------------
 nnoremap <silent> <leader>gb :Gblame<CR>
@@ -294,8 +299,6 @@ nnoremap <silent> <leader>jsb :call g:Jsbeautify()<cr>
 set tags=tags;/
 
 nnoremap <leader>soa :s/->\([a-zA-Z_]*\)/\['\1'\]/<CR>
-noremap <leader>of :CommandT<CR>
-noremap <leader>ob :CommandTBuffer<CR>
 
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
@@ -335,3 +338,5 @@ set titlestring=%F\ -\ Vim
 
 noremap <leader>bd <Esc>:BD<CR>
 vnoremap <leader>bd <Esc>:BD<CR>
+
+let g:EasyMotion_leader_key = "m"
