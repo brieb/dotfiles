@@ -1,1 +1,3 @@
 config/pianobar/config
+*.swp
+tags-ja
