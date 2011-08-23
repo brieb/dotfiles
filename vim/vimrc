@@ -306,8 +306,6 @@ let g:tagbar_usearrows = 1
 nnoremap <leader>t :TagbarToggle<CR>
 "nmap <silent> <Leader>t :TlistToggle<CR>
 
-nnoremap ; :
-
 " Enable automatic title setting for terminals
 set title
 set titleold="Terminal"

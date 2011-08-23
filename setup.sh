@@ -23,3 +23,5 @@ gen_sym tmux tmux.conf
 gen_sym tmux tmuxinator
 
 autogen_sym bash
+
+ln -s ~/dotfiles/todo.cfg ~/.todo.cfg

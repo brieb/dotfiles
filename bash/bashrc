@@ -90,3 +90,10 @@ fi
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+alias t='todo.sh'
+
+function def {
+  #curl "dict://dict.org/d:${1}:*";
+  local q=$(echo $1 | sed 's/ /%20/g')
+  w3m "http://dictionary.reference.com/search?q=${q}&r=67"  | tail -n +50
+}
