@@ -267,15 +267,15 @@ set pastetoggle=<F2>
 set showmode
 
 "-- FuzzyFinder -----------------------------------------------------------
-nnoremap <silent> ;;b :FufBuffer<CR>
-nnoremap <silent> ;;d :FufDir<CR>
-nnoremap <silent> ;;f :FufFile<CR>
-nnoremap <silent> ;;h :FufHelp<CR>
-nnoremap <silent> ;;t :FufTag<CR>
+nnoremap <silent> <leader>fb :FufBuffer<CR>
+nnoremap <silent> <leader>fd :FufDir<CR>
+nnoremap <silent> <leader>ff :FufFile<CR>
+nnoremap <silent> <leader>fh :FufHelp<CR>
+nnoremap <silent> <leader>ft :FufTag<CR>
 let g:fuf_keyOpen = '<Tab>'
 
-noremap ;f :CommandT<CR>
-noremap ;b :CommandTBuffer<CR>
+noremap <leader>;f :CommandT<CR>
+noremap <leader>;b :CommandTBuffer<CR>
 
 "-- Fugitive (Git) --------------------------------------------------------
 nnoremap <silent> <leader>gb :Gblame<CR>
