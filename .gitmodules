@@ -91,3 +91,6 @@
 [submodule "vim/vim/bundle/unimpaired.vim"]
 	path = vim/vim/bundle/unimpaired.vim
 	url = git://github.com/vim-scripts/unimpaired.vim.git
+[submodule "vim/vim/bundle/thrift.vim"]
+	path = vim/vim/bundle/thrift.vim
+	url = git://github.com/sprsquish/thrift.vim.git

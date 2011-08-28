@@ -1,4 +1,5 @@
 set -o vi
+source ~/dotfiles/bash/bashrc.fb
 
 # Open SOCKS proxy into KZSU on port localhost:10080 (see ~/.ssh/config)
 # Randomly picks from available SSH bastions.
@@ -98,3 +99,4 @@ function def {
   local q=$(echo $1 | sed 's/ /%20/g')
   w3m "http://dictionary.reference.com/search?q=${q}&r=67"  | tail -n +50
 }
+
