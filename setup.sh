@@ -19,9 +19,9 @@ function autogen_sym {
 autogen_sym vim 
 mkdir -p ~/.vim_runtime/undodir
 
-gen_sym tmux tmux.conf
-gen_sym tmux tmuxinator
+#gen_sym tmux tmux.conf
+#gen_sym tmux tmuxinator
 
-autogen_sym bash
+#autogen_sym bash
 
-ln -s ~/dotfiles/todo.cfg ~/.todo.cfg
+#ln -s ~/dotfiles/todo.cfg ~/.todo.cfg
