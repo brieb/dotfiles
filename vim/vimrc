@@ -6,7 +6,7 @@ call add(g:pathogen_disabled, 'tagbar')
 " for some reason the csscolor plugin is very slow when run on the terminal
 " but not in GVim, so disable it if no GUI is running
 if !has('gui_running')
-    call add(g:pathogen_disabled, 'csscolor')
+    call add(g:pathogen_disabled, 'css_color')
 endif
 
 " Gundo requires at least vim 7.3
@@ -356,3 +356,5 @@ noremap <leader>bd <Esc>:BD<CR>
 vnoremap <leader>bd <Esc>:BD<CR>
 
 let g:EasyMotion_leader_key = "m"
+
+au BufRead,BufNewFile *.thrift set filetype=thrift
