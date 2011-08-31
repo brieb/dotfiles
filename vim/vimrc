@@ -104,17 +104,21 @@ highlight ColorColumn guibg=Black
 set backspace=indent,eol,start
 
 "" Maps Alt-[h,j,k,l] to resizing a window split
-"map <silent> h <C-w><
-"map <silent> j <C-W>-
-"map <silent> k <C-W>+
-"map <silent> l <C-w>>
+map <silent> h <C-w>20<
+map <silent> j <C-W>20-
+map <silent> k <C-W>20+
+map <silent> l <C-w>20>
 ""Maps Alt-[s.v] to horizontal and vertical split respectively
-"map <silent> s :split<CR>
-"map <silent> v :vsplit<CR>
+map <silent> s :split<CR>
+map <silent> v :vsplit<CR>
 ""Maps Alt-[n,p] for moving next and previous window respectively
 "map <silent> n <C-w><C-w>
 "map <silent> p <C-w><S-w>
 "map <silent> q :BD<CR>
+map <silent> <C-l> <C-w>l
+map <silent> <C-j> <C-w>j
+map <silent> <C-k> <C-w>k
+map <silent> <C-h> <C-w>h
 
 "let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
