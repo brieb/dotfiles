@@ -91,3 +91,12 @@
 [submodule "vim/vim/bundle/unimpaired.vim"]
 	path = vim/vim/bundle/unimpaired.vim
 	url = git://github.com/vim-scripts/unimpaired.vim.git
+[submodule "vim/vim/bundle/vim-tmux"]
+	path = vim/vim/bundle/vim-tmux
+	url = git://github.com/tsaleh/vim-tmux.git
+[submodule "vim/vim/bundle/scss-syntax.vim"]
+	path = vim/vim/bundle/scss-syntax.vim
+	url = git://github.com/cakebaker/scss-syntax.vim.git
+[submodule "vim/vim/bundle/phpcomplete.vim"]
+	path = vim/vim/bundle/phpcomplete.vim
+	url = git://github.com/shawncplus/phpcomplete.vim.git

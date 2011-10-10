@@ -3,12 +3,12 @@ call pathogen#helptags()
 syntax on
 filetype plugin indent on
 
-if filereadable("$ADMIN_SCRIPTS/master.vimrc")
-  source $ADMIN_SCRIPTS/master.vimrc
-endif
-if filereadable("/home/engshare/admin/scripts/vim/biggrep.vim")
-  source /home/engshare/admin/scripts/vim/biggrep.vim
-endif
+"if filereadable("$ADMIN_SCRIPTS/master.vimrc")
+  "source $ADMIN_SCRIPTS/master.vimrc
+"endif
+"if filereadable("/home/engshare/admin/scripts/vim/biggrep.vim")
+  "source /home/engshare/admin/scripts/vim/biggrep.vim
+"endif
 
 set t_Co=256
 
@@ -339,4 +339,7 @@ set titlestring=%F\ -\ Vim
 noremap <leader>bd <Esc>:BD<CR>
 vnoremap <leader>bd <Esc>:BD<CR>
 
-let g:EasyMotion_leader_key = "m"
+let g:EasyMotion_leader_key = ","
+
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"

@@ -1,10 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Applications/MAMP/htdocs/dorm_website'
-let g:netrw_dirhist_2='/Users/bbunge/.vim'
-let g:netrw_dirhist_3='/Users/bbunge/test'
-let g:netrw_dirhist_4='/Applications/MAMP/htdocs/dorm_website'
-let g:netrw_dirhist_5='/Users/bbunge/Downloads/mbadolato-iTerm2-Color-Schemes-6325859/screenshots'
-let g:netrw_dirhist_6='/Applications/MAMP/htdocs/dorm_website'
-let g:netrw_dirhist_7='/Users/bbunge/test'
-let g:netrw_dirhist_8='/Applications/MAMP/htdocs/dorm_website/application/models'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/bbunge/test'
+let g:netrw_dirhist_2='/Applications/MAMP/htdocs/dorm_website'
+let g:netrw_dirhist_3='/Applications/MAMP/htdocs/dorm_website/intern/assets/sass'
+let g:netrw_dirhist_4='/Volumes/cs145/hw1'
+let g:netrw_dirhist_5='/Users/bbunge/dotfiles'

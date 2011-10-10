@@ -1,4 +1,6 @@
 set -o vi
+export EDITOR="vim"
+export SHELL="bash"
 
 # Open SOCKS proxy into KZSU on port localhost:10080 (see ~/.ssh/config)
 # Randomly picks from available SSH bastions.
@@ -98,3 +100,11 @@ function def {
   local q=$(echo $1 | sed 's/ /%20/g')
   w3m "http://dictionary.reference.com/search?q=${q}&r=67"  | tail -n +50
 }
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+alias yui="java -jar ~/yuicompressor-2.4.6/build/yuicompressor-2.4.6.jar"
+alias rjs="node ~/src/r.js"
+
+alias compass_watch="compass compile --output-style compressed ."
+

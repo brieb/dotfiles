@@ -1,0 +1,13 @@
+[user]
+	name = Brie
+	email = bbunge7@gmail.com
+[core]
+	excludesfile = /Users/bbunge/.gitignore
+	editor = /usr/local/bin/vim
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	amend = commit --amend
+[color]
+	ui = auto

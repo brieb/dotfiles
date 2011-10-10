@@ -1,14 +1,9 @@
-# ~/.tmuxinator/dorm_website.yml
-# you can make as many tabs as you wish...
-
-project_name: Dorm Website
+project_name: FSC
 project_root: /Applications/MAMP/htdocs/dorm_website
 #pre: sudo /etc/rc.d/mysqld start
 tabs:
   - editor:
-      layout: main-vertical
-      panes:
-        - vim .
+    - #shell
   - shell: git pull
     - #empty, will just run plain bash
   - logs:
@@ -23,11 +18,13 @@ tabs:
         - mql -Ddorm_website
         - vim qtmp.sql
   #- mux: tmuxinator open dorm_website
-  - sass: cd assets && sass --watch sass:css 
+  - rjs: cd assets/js && echo "rjs -o app.build.js"
+  - sass: cd assets && compass watch -s compressed .
   - dotfiles: cd ~/dotfiles
-  - noise: ~/brownnoise.sh 
+  #- noise: ~/brownnoise.sh 
   #- server: rails s
   #- logs: tail -f logs/development.log
   #- console: rails c
   #- capistrano:
   #- server: ssh me@myhost
+

@@ -25,3 +25,6 @@ gen_sym tmux tmuxinator
 autogen_sym bash
 
 ln -s ~/dotfiles/todo.cfg ~/.todo.cfg
+
+ln -s ~/dotfiles/git/gitconfig .gitconfig
+ln -s ~/dotfiles/git/gitignore .gitignore
