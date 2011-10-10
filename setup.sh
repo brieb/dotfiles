@@ -19,12 +19,16 @@ function autogen_sym {
 autogen_sym vim 
 mkdir -p ~/.vim_runtime/undodir
 
-gen_sym tmux tmux.conf
-gen_sym tmux tmuxinator
+#gen_sym tmux tmux.conf
+#gen_sym tmux tmuxinator
 
-autogen_sym bash
+#autogen_sym bash
 
+<<<<<<< HEAD
 ln -s ~/dotfiles/todo.cfg ~/.todo.cfg
 
 ln -s ~/dotfiles/git/gitconfig .gitconfig
 ln -s ~/dotfiles/git/gitignore .gitignore
+=======
+#ln -s ~/dotfiles/todo.cfg ~/.todo.cfg
+>>>>>>> 78efd577d03e882f7a3bb4bcff22081d5367ff26

@@ -1,95 +1,83 @@
-[submodule "vim/vim/bundle/nerdcommenter"]
-	path = vim/vim/bundle/nerdcommenter
+[submodule "vim/vim/bundle-available/nerdcommenter"]
+	path = vim/vim/bundle-available/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/vim/bundle/nerdtree"]
-	path = vim/vim/bundle/nerdtree
+[submodule "vim/vim/bundle-available/nerdtree"]
+	path = vim/vim/bundle-available/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/vim/bundle/vim-surround"]
-	path = vim/vim/bundle/vim-surround
+[submodule "vim/vim/bundle-available/vim-surround"]
+	path = vim/vim/bundle-available/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "vim/vim/bundle/snipmate.vim"]
-	path = vim/vim/bundle/snipmate.vim
+[submodule "vim/vim/bundle-available/snipmate.vim"]
+	path = vim/vim/bundle-available/snipmate.vim
 	url = git@github.com:brieb/snipmate.vim.git
-[submodule "vim/vim/bundle/sparkup"]
-	path = vim/vim/bundle/sparkup
+[submodule "vim/vim/bundle-available/sparkup"]
+	path = vim/vim/bundle-available/sparkup
 	url = git@github.com:rstacruz/sparkup.git
-[submodule "vim/vim/bundle/delimitMate"]
-	path = vim/vim/bundle/delimitMate
+[submodule "vim/vim/bundle-available/delimitMate"]
+	path = vim/vim/bundle-available/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
-[submodule "vim/vim/bundle/taglist-plus"]
-	path = vim/vim/bundle/taglist-plus
+[submodule "vim/vim/bundle-available/taglist-plus"]
+	path = vim/vim/bundle-available/taglist-plus
 	url = git://github.com/vim-scripts/taglist-plus.git
-[submodule "vim/vim/bundle/bufkill.vim"]
-	path = vim/vim/bundle/bufkill.vim
+[submodule "vim/vim/bundle-available/bufkill.vim"]
+	path = vim/vim/bundle-available/bufkill.vim
 	url = git@github.com:vim-scripts/bufkill.vim.git
-[submodule "vim/vim/bundle/tir_black"]
-	path = vim/vim/bundle/tir_black
+[submodule "vim/vim/bundle-available/tir_black"]
+	path = vim/vim/bundle-available/tir_black
 	url = git@github.com:vim-scripts/tir_black.git
-[submodule "vim/vim/bundle/vim-colors-solarized"]
-	path = vim/vim/bundle/vim-colors-solarized
+[submodule "vim/vim/bundle-available/vim-colors-solarized"]
+	path = vim/vim/bundle-available/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/vim/bundle/phpcomplete"]
-	path = vim/vim/bundle/phpcomplete
+[submodule "vim/vim/bundle-available/phpcomplete"]
+	path = vim/vim/bundle-available/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
-[submodule "vim/vim/bundle/vim-fugitive"]
-	path = vim/vim/bundle/vim-fugitive
+[submodule "vim/vim/bundle-available/vim-fugitive"]
+	path = vim/vim/bundle-available/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/vim/bundle/bufexplorer.zip"]
-	path = vim/vim/bundle/bufexplorer.zip
+[submodule "vim/vim/bundle-available/bufexplorer.zip"]
+	path = vim/vim/bundle-available/bufexplorer.zip
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
-[submodule "vim/vim/bundle/YankRing.vim"]
-	path = vim/vim/bundle/YankRing.vim
+[submodule "vim/vim/bundle-available/YankRing.vim"]
+	path = vim/vim/bundle-available/YankRing.vim
 	url = git://github.com/vim-scripts/YankRing.vim.git
-[submodule "vim/vim/bundle/gundo.vim"]
-	path = vim/vim/bundle/gundo.vim
+[submodule "vim/vim/bundle-available/gundo.vim"]
+	path = vim/vim/bundle-available/gundo.vim
 	url = git://github.com/sjl/gundo.vim.git
-[submodule "vim/vim/bundle/FuzzyFinder"]
-	path = vim/vim/bundle/FuzzyFinder
+[submodule "vim/vim/bundle-available/FuzzyFinder"]
+	path = vim/vim/bundle-available/FuzzyFinder
 	url = git://github.com/vim-scripts/FuzzyFinder.git
-[submodule "vim/vim/bundle/L9"]
-	path = vim/vim/bundle/L9
+[submodule "vim/vim/bundle-available/L9"]
+	path = vim/vim/bundle-available/L9
 	url = git://github.com/vim-scripts/L9.git
-[submodule "vim/vim/bundle/tabular"]
-	path = vim/vim/bundle/tabular
+[submodule "vim/vim/bundle-available/tabular"]
+	path = vim/vim/bundle-available/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "vim/vim/bundle/IndentAnything"]
-	path = vim/vim/bundle/IndentAnything
+[submodule "vim/vim/bundle-available/IndentAnything"]
+	path = vim/vim/bundle-available/IndentAnything
 	url = git://github.com/vim-scripts/IndentAnything.git
-[submodule "vim/vim/bundle/vim-javascript"]
-	path = vim/vim/bundle/vim-javascript
+[submodule "vim/vim/bundle-available/vim-javascript"]
+	path = vim/vim/bundle-available/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
-[submodule "vim/vim/bundle/command-t"]
-	path = vim/vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
-[submodule "vim/vim/bundle/SuperTab"]
-	path = vim/vim/bundle/SuperTab
-	url = git://github.com/vim-scripts/SuperTab.git
-[submodule "vim/vim/bundle/tagbar"]
-	path = vim/vim/bundle/tagbar
+[submodule "vim/vim/bundle-available/tagbar"]
+	path = vim/vim/bundle-available/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule "vim/vim/bundle/vim-indent-guides"]
-	path = vim/vim/bundle/vim-indent-guides
+[submodule "vim/vim/bundle-available/vim-indent-guides"]
+	path = vim/vim/bundle-available/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "vim/vim/bundle/mru.vim"]
-	path = vim/vim/bundle/mru.vim
-	url = git://github.com/vim-scripts/mru.vim.git
-[submodule "vim/vim/bundle/vim-repeat"]
-	path = vim/vim/bundle/vim-repeat
+[submodule "vim/vim/bundle-available/vim-repeat"]
+	path = vim/vim/bundle-available/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
-[submodule "vim/vim/bundle/Better-CSS-Syntax-for-Vim"]
-	path = vim/vim/bundle/Better-CSS-Syntax-for-Vim
+[submodule "vim/vim/bundle-available/Better-CSS-Syntax-for-Vim"]
+	path = vim/vim/bundle-available/Better-CSS-Syntax-for-Vim
 	url = git://github.com/vim-scripts/Better-CSS-Syntax-for-Vim.git
-[submodule "vim/vim/bundle/css_color.vim"]
-	path = vim/vim/bundle/css_color.vim
-	url = git://github.com/vim-scripts/css_color.vim.git
-[submodule "vim/vim/bundle/vim-sparkup"]
-	path = vim/vim/bundle/vim-sparkup
+[submodule "vim/vim/bundle-available/vim-sparkup"]
+	path = vim/vim/bundle-available/vim-sparkup
 	url = git://github.com/bingaman/vim-sparkup.git
-[submodule "vim/vim/bundle/vim-easymotion"]
-	path = vim/vim/bundle/vim-easymotion
+[submodule "vim/vim/bundle-available/vim-easymotion"]
+	path = vim/vim/bundle-available/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
-[submodule "vim/vim/bundle/unimpaired.vim"]
-	path = vim/vim/bundle/unimpaired.vim
+[submodule "vim/vim/bundle-available/unimpaired.vim"]
+	path = vim/vim/bundle-available/unimpaired.vim
 	url = git://github.com/vim-scripts/unimpaired.vim.git
 [submodule "vim/vim/bundle/vim-tmux"]
 	path = vim/vim/bundle/vim-tmux
@@ -100,3 +88,6 @@
 [submodule "vim/vim/bundle/phpcomplete.vim"]
 	path = vim/vim/bundle/phpcomplete.vim
 	url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule "vim/vim/bundle-available/thrift.vim"]
+	path = vim/vim/bundle-available/thrift.vim
+	url = git://github.com/sprsquish/thrift.vim.git

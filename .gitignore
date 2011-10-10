@@ -1,3 +1,4 @@
 config/pianobar/config
 *.swp
 tags-ja
+*.fb

@@ -1,5 +1,21 @@
-call pathogen#infect()
-call pathogen#helptags()
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+
+call add(g:pathogen_disabled, 'tagbar')
+
+" for some reason the csscolor plugin is very slow when run on the terminal
+" but not in GVim, so disable it if no GUI is running
+if !has('gui_running')
+    call add(g:pathogen_disabled, 'css_color')
+endif
+
+" Gundo requires at least vim 7.3
+if v:version < '703' || !has('python')
+    call add(g:pathogen_disabled, 'gundo')
+endif
+
+call pathogen#runtime_append_all_bundles()
+
 syntax on
 filetype plugin indent on
 
@@ -30,7 +46,7 @@ filetype plugin indent on
 " make uses real tabs
 au FileType make set noexpandtab
 
-let mapleader=" "
+let mapleader=","
 nnoremap <C-@> a
 vnoremap <C-@> <Esc>gV
 onoremap <C-@> <Esc>
@@ -88,17 +104,21 @@ highlight ColorColumn guibg=Black
 set backspace=indent,eol,start
 
 "" Maps Alt-[h,j,k,l] to resizing a window split
-"map <silent> h <C-w><
-"map <silent> j <C-W>-
-"map <silent> k <C-W>+
-"map <silent> l <C-w>>
+map <silent> h <C-w>20<
+map <silent> j <C-W>20-
+map <silent> k <C-W>20+
+map <silent> l <C-w>20>
 ""Maps Alt-[s.v] to horizontal and vertical split respectively
-"map <silent> s :split<CR>
-"map <silent> v :vsplit<CR>
+map <silent> s :split<CR>
+map <silent> v :vsplit<CR>
 ""Maps Alt-[n,p] for moving next and previous window respectively
 "map <silent> n <C-w><C-w>
 "map <silent> p <C-w><S-w>
 "map <silent> q :BD<CR>
+map <silent> <C-l> <C-w>l
+map <silent> <C-j> <C-w>j
+map <silent> <C-k> <C-w>k
+map <silent> <C-h> <C-w>h
 
 "let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
@@ -148,7 +168,7 @@ set mouse=a
 "Always show the statusline
 set laststatus=2
 "Format the statusline
-set statusline=%n\ %r%m\ %f%=%w%y%{fugitive#statusline()}[%l/%L:%c]%{strftime(\"%l:%M%p\ %m/%d\")}
+set statusline=%n\ %r%m\ %f%=%w%y[%l/%L:%c]%{strftime(\"%l:%M%p\ %m/%d\")}
 
 """"""""""""""""""""
 " => Spell Checking
@@ -339,7 +359,8 @@ set titlestring=%F\ -\ Vim
 noremap <leader>bd <Esc>:BD<CR>
 vnoremap <leader>bd <Esc>:BD<CR>
 
-let g:EasyMotion_leader_key = ","
-
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+let g:EasyMotion_leader_key = "m"
+
+au BufRead,BufNewFile *.thrift set filetype=thrift

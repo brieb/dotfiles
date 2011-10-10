@@ -1,6 +1,7 @@
 set -o vi
 export EDITOR="vim"
 export SHELL="bash"
+source ~/dotfiles/bash/bashrc.fb
 
 # Open SOCKS proxy into KZSU on port localhost:10080 (see ~/.ssh/config)
 # Randomly picks from available SSH bastions.
