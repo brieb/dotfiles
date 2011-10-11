@@ -1,8 +1,6 @@
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
 
-call add(g:pathogen_disabled, 'tagbar')
-
 " for some reason the csscolor plugin is very slow when run on the terminal
 " but not in GVim, so disable it if no GUI is running
 if !has('gui_running')
@@ -30,9 +28,40 @@ set t_Co=256
 
 nmap Y y$
 
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
 set number
 set hidden
 set ruler
+set relativenumber
+set modelines=0
+
+set encoding=utf-8
+set scrolloff=3
+set showmode
+set showcmd
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set backspace=indent,eol,start
+set laststatus=2
+set relativenumber
+
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+inoremap jj <ESC>
+
+nnoremap <leader>v V`]
+
+nnoremap ; :
+
+au FocusLost * :wa
+
+"applies substitutions globally on lines
+set gdefault
 
 " Whitespace stuff
 set nowrap
@@ -60,7 +89,8 @@ set smartcase
 
 syntax enable
 set background=dark
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme molokai
 "colorscheme tir_black 
 "colorscheme solarized 
 "let g:solarized_contrast="high"
@@ -103,6 +133,7 @@ highlight ColorColumn guibg=Black
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+nnoremap <leader>w <C-w>v<C-w>l
 "" Maps Alt-[h,j,k,l] to resizing a window split
 map <silent> h <C-w>20<
 map <silent> j <C-W>20-
@@ -307,7 +338,7 @@ nnoremap <silent> <leader>gs :Gstatus<CR>)
 nmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
 vmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
 
-map <leader>w :wa<CR>
+"map <leader>w :wa<CR>
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS

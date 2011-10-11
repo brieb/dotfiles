@@ -12,7 +12,7 @@ alias kzsu-shutdown="ps auxwww | grep ssh | grep kzsu | perl -na -e 'print \"Kil
 
 export PATH=/sw/bin:/usr/local/bin:~/bash-brie/bin:$PATH
 
-alias l="ls -al"
+alias l="ls -alG"
 
 alias go2mamp="cd /Applications/MAMP/htdocs"
 alias mql="/Applications/MAMP/Library/bin/mysql -uroot -proot"
@@ -61,18 +61,24 @@ local       GRAY="\[\033[0;37m\]"
 local LIGHT_GREEN="\[\033[1;32m\]"
 local       WHITE="\[\033[1;37m\]"
 local  LIGHT_GRAY="\[\033[0;37m\]"
+
 case $TERM in
   xterm*)
-  TITLEBAR='\[\033]0;\u@\h:\w\007\]'
-  ;;
+    TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+    ;;
   *)
-  TITLEBAR=""
-  ;;
+    TITLEBAR=""
+    ;;
 esac
 
-PS1="${TITLEBAR}\
-$BLUE[$PINK\u@\h:\w$GRAY\$(parse_git_branch)$BLUE]\
+PS1="\
+$BLUE[\
+$PINK\u@\h:\
+\w\
+$LIGHT_GREEN\$(parse_git_branch)\
+$BLUE]\
 $GRAY\$ "
+
 PS2='> '
 PS4='+ '
 }
