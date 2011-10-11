@@ -1,4 +1,5 @@
 config/pianobar/config
+vim/vim/.netrwhist
 *.swp
 tags-ja
 *.fb
