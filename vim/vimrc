@@ -52,7 +52,6 @@ set relativenumber
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-inoremap jj <ESC>
 
 nnoremap <leader>v V`]
 
@@ -67,6 +66,7 @@ set gdefault
 set nowrap
 set tabstop=2
 set shiftwidth=2
+set sw=2
 set softtabstop=2
 set expandtab
 set autoindent
@@ -76,10 +76,15 @@ filetype plugin indent on
 au FileType make set noexpandtab
 
 let mapleader=","
+
 nnoremap <C-@> a
 vnoremap <C-@> <Esc>gV
 onoremap <C-@> <Esc>
 inoremap <C-@> <Esc>
+nnoremap <C-Space> a
+vnoremap <C-Space> <Esc>gV
+onoremap <C-Space> <Esc>
+inoremap <C-Space> <Esc>
 
 " Searching
 set hlsearch
@@ -133,7 +138,7 @@ highlight ColorColumn guibg=Black
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-w>v <C-w>v<C-w>l
 "" Maps Alt-[h,j,k,l] to resizing a window split
 map <silent> h <C-w>20<
 map <silent> j <C-W>20-
@@ -338,7 +343,7 @@ nnoremap <silent> <leader>gs :Gstatus<CR>)
 nmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
 vmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
 
-"map <leader>w :wa<CR>
+map <leader>w :wa<CR>
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS

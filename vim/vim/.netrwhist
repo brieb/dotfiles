@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/bbunge/test'
-let g:netrw_dirhist_2='/Applications/MAMP/htdocs/dorm_website'
-let g:netrw_dirhist_3='/Applications/MAMP/htdocs/dorm_website/intern/assets/sass'
-let g:netrw_dirhist_4='/Volumes/cs145/hw1'
-let g:netrw_dirhist_5='/Users/bbunge/Dropbox/sync/alfred/extensions/filters'
-let g:netrw_dirhist_6='/Users/bbunge/Dropbox/sync/alfred/extensions/filters/cs145'
