@@ -26,14 +26,12 @@ filetype plugin indent on
 
 set t_Co=256
 
-nmap Y y$
 
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 set number
 set hidden
 set ruler
-set relativenumber
 set modelines=0
 
 set encoding=utf-8
@@ -55,7 +53,7 @@ vnoremap <F1> <ESC>
 
 nnoremap <leader>v V`]
 
-nnoremap ; :
+set wrap linebreak textwidth=0
 
 au FocusLost * :wa
 
@@ -140,13 +138,13 @@ set backspace=indent,eol,start
 
 nnoremap <C-w>v <C-w>v<C-w>l
 "" Maps Alt-[h,j,k,l] to resizing a window split
-map <silent> h <C-w>20<
-map <silent> j <C-W>20-
-map <silent> k <C-W>20+
-map <silent> l <C-w>20>
-""Maps Alt-[s.v] to horizontal and vertical split respectively
-map <silent> s :split<CR>
-map <silent> v :vsplit<CR>
+"map <silent> h <C-w>20<
+"map <silent> j <C-W>20-
+"map <silent> k <C-W>20+
+"map <silent> l <C-w>20>
+"""Maps Alt-[s.v] to horizontal and vertical split respectively
+"map <silent> s :split<CR>
+"map <silent> v :vsplit<CR>
 ""Maps Alt-[n,p] for moving next and previous window respectively
 "map <silent> n <C-w><C-w>
 "map <silent> p <C-w><S-w>
@@ -395,8 +393,13 @@ set titlestring=%F\ -\ Vim
 noremap <leader>bd <Esc>:BD<CR>
 vnoremap <leader>bd <Esc>:BD<CR>
 
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-let g:EasyMotion_leader_key = "m"
+"let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"let g:EasyMotion_leader_key = "\\"
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
+
+unmap Y
+nnoremap Y y$
+
+inoremap jk <esc>

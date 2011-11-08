@@ -1,7 +1,10 @@
 set -o vi
 export EDITOR="vim"
 export SHELL="bash"
-source ~/dotfiles/bash/bashrc.fb
+
+if [ -f ~/dotfiles/bash/bashrc.fb ]; then
+  source ~/dotfiles/bash/bashrc.fb
+fi
 
 # Open SOCKS proxy into KZSU on port localhost:10080 (see ~/.ssh/config)
 # Randomly picks from available SSH bastions.
@@ -10,7 +13,8 @@ alias kzsu-ssh="BASTION=\$(grep -E '^Host kzsu-ssh[1-9]' ~/.ssh/config | cut -d'
 # Shuts down backgrounded ssh connections
 alias kzsu-shutdown="ps auxwww | grep ssh | grep kzsu | perl -na -e 'print \"Killing \$F[1]...\"; \`kill \$F[1]\`; print \"done.\n\"'"
 
-export PATH=/sw/bin:/usr/local/bin:~/bash-brie/bin:$PATH
+export PATH=/usr/local/Cellar/ruby/1.9.2-p290/bin:/sw/bin:/usr/local/bin:~/bash-brie/bin:$PATH
+#export VMAIL_VIM=mvim
 
 alias l="ls -alG"
 
@@ -113,5 +117,6 @@ function def {
 alias yui="java -jar ~/yuicompressor-2.4.6/build/yuicompressor-2.4.6.jar"
 alias rjs="node ~/src/r.js"
 
-alias compass_watch="compass compile --output-style compressed ."
+alias compass_compile="compass compile --output-style compressed ."
+alias compass_watch="compass watch --output-style compressed ."
 
