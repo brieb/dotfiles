@@ -180,7 +180,7 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 
 "let g:neocomplcache_enable_at_startup = 1
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 let g:session_directory='~/vim-sessions'
 
@@ -353,11 +353,6 @@ nnoremap <silent> <leader>jsb :call g:Jsbeautify()<cr>
 set tags=tags;/
 
 nnoremap <leader>soa :s/->\([a-zA-Z_]*\)/\['\1'\]/<CR>
-
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
-
-let g:SuperTabDefaultCompletionType = "context"
 
 let g:tagbar_usearrows = 1
 nnoremap <leader>t :TagbarToggle<CR>
