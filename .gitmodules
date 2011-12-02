@@ -100,3 +100,6 @@
 [submodule "vim/vim/bundle/Vim-R-plugin"]
 	path = vim/vim/bundle/Vim-R-plugin
 	url = git://github.com/vim-scripts/Vim-R-plugin.git
+[submodule "vim/vim/bundle/taskpaper.vim"]
+	path = vim/vim/bundle/taskpaper.vim
+	url = git://github.com/davidoc/taskpaper.vim.git
