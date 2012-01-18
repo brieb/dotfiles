@@ -103,3 +103,18 @@
 [submodule "vim/vim/bundle/taskpaper.vim"]
 	path = vim/vim/bundle/taskpaper.vim
 	url = git://github.com/davidoc/taskpaper.vim.git
+[submodule "vim/vim/bundle/vimoutliner"]
+	path = vim/vim/bundle/vimoutliner
+	url = git://github.com/vimoutliner/vimoutliner.git
+[submodule "vim/vim/bundle/vim-creole"]
+	path = vim/vim/bundle/vim-creole
+	url = git://github.com/vim-scripts/vim-creole.git
+[submodule "vim/vim/bundle/vim-less"]
+	path = vim/vim/bundle/vim-less
+	url = git://github.com/groenewege/vim-less.git
+[submodule "vim/vim/bundle/vimoutliner-colorscheme-fix"]
+	path = vim/vim/bundle/vimoutliner-colorscheme-fix
+	url = git://github.com/vim-scripts/vimoutliner-colorscheme-fix
+[submodule "vim/vim/bundle/VimOrganizer"]
+	path = vim/vim/bundle/VimOrganizer
+	url = git://github.com/hsitz/VimOrganizer

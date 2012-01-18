@@ -45,7 +45,7 @@ set cursorline
 set ttyfast
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
+"set relativenumber
 
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -393,8 +393,11 @@ vnoremap <leader>bd <Esc>:BD<CR>
 "let g:EasyMotion_leader_key = "\\"
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
+au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.wiki set filetype=creole
 
 unmap Y
 nnoremap Y y$
 
-inoremap jk <esc>
+"inoremap jk <esc>
+set updatetime=4000
