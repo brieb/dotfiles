@@ -13,7 +13,7 @@ alias kzsu-ssh="BASTION=\$(grep -E '^Host kzsu-ssh[1-9]' ~/.ssh/config | cut -d'
 # Shuts down backgrounded ssh connections
 alias kzsu-shutdown="ps auxwww | grep ssh | grep kzsu | perl -na -e 'print \"Killing \$F[1]...\"; \`kill \$F[1]\`; print \"done.\n\"'"
 
-export PATH=/usr/local/Cellar/ruby/1.9.2-p290/bin:/sw/bin:/usr/local/bin:~/bash-brie/bin:$PATH
+export PATH=/usr/local/Cellar/ruby/1.9.2-p290/bin:/sw/bin:/usr/local/bin:~/bash-brie/bin:~/random_src:$PATH
 #export VMAIL_VIM=mvim
 
 alias l="ls -alG"
