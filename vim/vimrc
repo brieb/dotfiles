@@ -1,33 +1,11 @@
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
-
-" for some reason the csscolor plugin is very slow when run on the terminal
-" but not in GVim, so disable it if no GUI is running
-if !has('gui_running')
-    call add(g:pathogen_disabled, 'css_color')
-endif
-
-" Gundo requires at least vim 7.3
-if v:version < '703' || !has('python')
-    call add(g:pathogen_disabled, 'gundo')
-endif
-
 call pathogen#runtime_append_all_bundles()
 
 syntax on
 filetype plugin indent on
 
-"if filereadable("$ADMIN_SCRIPTS/master.vimrc")
-  "source $ADMIN_SCRIPTS/master.vimrc
-"endif
-"if filereadable("/home/engshare/admin/scripts/vim/biggrep.vim")
-  "source /home/engshare/admin/scripts/vim/biggrep.vim
-"endif
-
 set t_Co=256
-
-
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 set number
 set hidden
@@ -45,7 +23,6 @@ set cursorline
 set ttyfast
 set backspace=indent,eol,start
 set laststatus=2
-"set relativenumber
 
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -69,7 +46,6 @@ set softtabstop=2
 set expandtab
 set autoindent
 set smartindent
-filetype plugin indent on
 " make uses real tabs
 au FileType make set noexpandtab
 
@@ -92,40 +68,18 @@ set smartcase
 
 syntax enable
 set background=dark
-"colorscheme jellybeans
 colorscheme molokai
-"colorscheme tir_black 
-"colorscheme solarized 
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme candycode
-
-
-
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
-
-" NERDTree configuration
-let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-nnoremap <Leader>n :NERDTreeToggle<CR>
-nnoremap <silent> <leader>N :NERDTreeFind<CR>
-let NERDTreeShowHidden=1
-let NERDTreeShowBookmarks=1
-"let NERDTreeChDirMode=2
+set wildignore+=*.o,*.obj,*.rbc,*.class,vendor/gems/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
-" Enable syntastic syntax checking
-"let g:syntastic_enable_signs=1
-"let g:syntastic_quiet_warnings=1
-
 set showcmd
 set showmode
-
-"set list
 
 set wrap        "dont wrap lines
 set colorcolumn=81
@@ -137,25 +91,10 @@ highlight ColorColumn guibg=Black
 set backspace=indent,eol,start
 
 nnoremap <C-w>v <C-w>v<C-w>l
-"" Maps Alt-[h,j,k,l] to resizing a window split
-"map <silent> h <C-w>20<
-"map <silent> j <C-W>20-
-"map <silent> k <C-W>20+
-"map <silent> l <C-w>20>
-"""Maps Alt-[s.v] to horizontal and vertical split respectively
-"map <silent> s :split<CR>
-"map <silent> v :vsplit<CR>
-""Maps Alt-[n,p] for moving next and previous window respectively
-"map <silent> n <C-w><C-w>
-"map <silent> p <C-w><S-w>
-"map <silent> q :BD<CR>
 map <silent> <C-l> <C-w>l
 map <silent> <C-j> <C-w>j
 map <silent> <C-k> <C-w>k
 map <silent> <C-h> <C-w>h
-
-"let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
@@ -320,27 +259,6 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-"-- FuzzyFinder -----------------------------------------------------------
-nnoremap <silent> <leader>fb :FufBuffer<CR>
-nnoremap <silent> <leader>fd :FufDir<CR>
-nnoremap <silent> <leader>ff :FufFile<CR>
-nnoremap <silent> <leader>fh :FufHelp<CR>
-nnoremap <silent> <leader>ft :FufTag<CR>
-let g:fuf_keyOpen = '<Tab>'
-
-noremap <leader>;f :CommandT<CR>
-noremap <leader>;b :CommandTBuffer<CR>
-
-"-- Fugitive (Git) --------------------------------------------------------
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gs :Gstatus<CR>)
-
-nmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
-vmap <Leader>tbh :Tabularize /[a-z]\+=/l1l0<CR>
-
 map <leader>w :wa<CR>
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -348,49 +266,9 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-nnoremap <silent> <leader>jsb :call g:Jsbeautify()<cr>
-
 set tags=tags;/
 
 nnoremap <leader>soa :s/->\([a-zA-Z_]*\)/\['\1'\]/<CR>
-
-let g:tagbar_usearrows = 1
-nnoremap <leader>t :TagbarToggle<CR>
-"nmap <silent> <Leader>t :TlistToggle<CR>
-
-" Enable automatic title setting for terminals
-set title
-set titleold="Terminal"
-set titlestring=%F\ -\ Vim
-
-"" Disable up/down arrow keys
-"noremap <up> <nop>
-"noremap <down> <nop>
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"vnoremap <up> <nop>
-"vnoremap <down> <nop>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"
-"" Left/Right arrow keys change buffers in all modes
-"noremap <Left> <Esc>:bp<CR>
-"inoremap <Left> <Esc>:bp<CR>
-"nnoremap <Left> <Esc>:bp<CR>
-"vnoremap <Left> <Esc>:bp<CR>
-"
-"noremap <Right> <Esc>:bn<CR>
-"inoremap <Right> <Esc>:bn<CR>
-"nnoremap <Right> <Esc>:bn<CR>
-"vnoremap <Right> <Esc>:bn<CR>
-
-
-noremap <leader>bd <Esc>:BD<CR>
-vnoremap <leader>bd <Esc>:BD<CR>
-
-"let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-"let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-"let g:EasyMotion_leader_key = "\\"
 
 au BufRead,BufNewFile *.thrift set filetype=thrift
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -399,5 +277,12 @@ au BufRead,BufNewFile *.wiki set filetype=creole
 unmap Y
 nnoremap Y y$
 
-"inoremap jk <esc>
 set updatetime=4000
+
+" Enable automatic title setting for terminals
+set title
+set titleold="Terminal"
+set titlestring=%f
+" Set iterm title
+set t_ts=]1;
+set t_fs=
