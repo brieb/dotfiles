@@ -118,8 +118,6 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 "let g:neocomplcache_enable_at_startup = 1
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 let g:session_directory='~/vim-sessions'
 
@@ -265,6 +263,8 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 set tags=tags;/
 

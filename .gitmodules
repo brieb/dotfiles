@@ -1,36 +1,42 @@
 [submodule "vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
-	url = git@github.com:Raimondi/delimitMate.git
+  path = vim/bundle/delimitMate
+  url = git@github.com:Raimondi/delimitMate.git
 [submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
+  path = vim/bundle/nerdcommenter
+  url = git://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/scss-syntax"]
-	path = vim/bundle/scss-syntax
-	url = git://github.com/cakebaker/scss-syntax.vim.git
+  path = vim/bundle/scss-syntax
+  url = git://github.com/cakebaker/scss-syntax.vim.git
 [submodule "vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
-	url = git://github.com/groenewege/vim-less.git
+  path = vim/bundle/vim-less
+  url = git://github.com/groenewege/vim-less.git
 [submodule "vim/bundle/vim-web-indent"]
-	path = vim/bundle/vim-web-indent
-	url = git://github.com/lukaszb/vim-web-indent.git
+  path = vim/bundle/vim-web-indent
+  url = git://github.com/lukaszb/vim-web-indent.git
 [submodule "vim/bundle/unimpaired.vim"]
-	path = vim/bundle/unimpaired.vim
-	url = git://github.com/vim-scripts/unimpaired.vim.git
+  path = vim/bundle/unimpaired.vim
+  url = git://github.com/vim-scripts/unimpaired.vim.git
 [submodule "vim/bundle/vim-surround"]
-	path = vim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
+  path = vim/bundle/vim-surround
+  url = git://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/vim-repeat"]
-	path = vim/bundle/vim-repeat
-	url = git://github.com/tpope/vim-repeat.git
+  path = vim/bundle/vim-repeat
+  url = git://github.com/tpope/vim-repeat.git
 [submodule "vim/bundle/vim-easytags"]
-	path = vim/bundle/vim-easytags
-	url = git://github.com/xolox/vim-easytags.git
+  path = vim/bundle/vim-easytags
+  url = git://github.com/xolox/vim-easytags.git
 [submodule "vim/bundle/vim-snipmate"]
-	path = vim/bundle/vim-snipmate
-	url = git@bitbucket.org:brieb/vim-snipmate.git
+  path = vim/bundle/vim-snipmate
+  url = git@bitbucket.org:brieb/vim-snipmate.git
 [submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
-	url = git://github.com/pangloss/vim-javascript.git
+  path = vim/bundle/vim-javascript
+  url = git://github.com/pangloss/vim-javascript.git
 [submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = git://github.com/kien/ctrlp.vim.git
+  path = vim/bundle/ctrlp.vim
+  url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/ack.vim"]
+  path = vim/bundle/ack.vim
+  url = git://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/vim-taglist-plus"]
+  path = vim/bundle/vim-taglist-plus
+  url = git://github.com/int3/vim-taglist-plus.git
