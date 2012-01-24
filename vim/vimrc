@@ -123,13 +123,14 @@ let g:session_directory='~/vim-sessions'
 
 inoremap <C-j> <Esc>A;<Esc>o
 
-set tags=tags;/
 nmap <silent> <F4>
       \ :!ctags -f ./tags
       \ --langmap="php:+.inc"
       \ -h ".php.inc" -R --totals=yes
       \ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
-set tags=./tags,tags
+set tags=./tags,tags;$HOME
+
+autocmd BufWritePost,FileWritePost *.js silent! !jsctags . &
 
 set mouse=a
 

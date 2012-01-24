@@ -1,0 +1,3 @@
+#--type-add=css=.less
+#--type-set=css=.css,.less
+--type-set=css=.less

@@ -34,9 +34,12 @@
 [submodule "vim/bundle/ctrlp.vim"]
   path = vim/bundle/ctrlp.vim
   url = git://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/ack.vim"]
-  path = vim/bundle/ack.vim
-  url = git://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/vim-taglist-plus"]
   path = vim/bundle/vim-taglist-plus
   url = git://github.com/int3/vim-taglist-plus.git
+[submodule "vim/bundle/ack.vim"]
+	path = vim/bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/YankRing.vim"]
+	path = vim/bundle/YankRing.vim
+	url = git://github.com/vim-scripts/YankRing.vim.git
