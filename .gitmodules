@@ -43,3 +43,9 @@
 [submodule "vim/bundle/YankRing.vim"]
 	path = vim/bundle/YankRing.vim
 	url = git://github.com/vim-scripts/YankRing.vim.git
+[submodule "vim/bundle/vimoutliner"]
+	path = vim/bundle/vimoutliner
+	url = git://github.com/vimoutliner/vimoutliner.git
+[submodule "vim/bundle/vimoutliner-colorscheme-fix"]
+	path = vim/bundle/vimoutliner-colorscheme-fix
+	url = git://github.com/vim-scripts/vimoutliner-colorscheme-fix.git
